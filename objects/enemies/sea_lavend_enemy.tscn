@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvmicmffmqscd"]
+
+[ext_resource type="Script" uid="uid://cju5rlq44guyh" path="res://objects/enemies/sea_lavend_enemy.gd" id="1_8yu72"]
+[ext_resource type="SpriteFrames" uid="uid://c8q6j3tlugho" path="res://objects/enemies/resources/sea_lavend_enemy_frames.tres" id="2_8yu72"]
+[ext_resource type="Resource" uid="uid://hdd35o5j0o64" path="res://objects/enemies/resources/sea_lavend_motion_profile.tres" id="2_l3qm6"]
+[ext_resource type="Script" uid="uid://blyion2ocd1fb" path="res://objects/enemies/ai_controller.gd" id="3_8yu72"]
+[ext_resource type="Shape2D" uid="uid://p7kwppriccqh" path="res://objects/enemies/resources/big_enemy_collision_shape.tres" id="4_l3qm6"]
+
+[node name="SeaLavendEnemy" type="RigidBody2D"]
+mass = 15.0
+script = ExtResource("1_8yu72")
+motion_profile = ExtResource("2_l3qm6")
+metadata/_custom_type_script = "uid://dkh3jaaybgbdk"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("2_8yu72")
+animation = &"Run"
+offset = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = ExtResource("4_l3qm6")
+
+[node name="AIController" type="Node" parent="." node_paths=PackedStringArray("mob", "debug_raycast")]
+script = ExtResource("3_8yu72")
+mob = NodePath("..")
+debug_raycast = NodePath("../Debug")
+metadata/_custom_type_script = "uid://blyion2ocd1fb"
+
+[node name="Debug" type="RayCast2D" parent="."]

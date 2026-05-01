@@ -3,9 +3,10 @@ class_name BigMomma
 
 @onready var interactable_area: InteractableArea = %InteractableArea
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite2D
+@onready var progress_bar: ProgressBar = %ProgressBar
 
-@export var stage1_capacity: int = 5
-@export var stage2_capacity: int = 10
+@export var stage1_capacity: int = 1
+@export var stage2_capacity: int = 5
 @export var stage3_capacity: int = 20 
 
 enum Stage {
@@ -22,6 +23,9 @@ var raphs_needed: Dictionary[Stage, int] = {
 
 func _on_stage_change(new_stage: Stage) -> void:
 	current_stage = new_stage
+	progress_bar.max_value = raphs_needed[current_stage]
+	progress_bar.value = 0
+	counter = 0
 	match current_stage:
 		Stage.ONE: animated_sprite.play("Stage1")
 		Stage.TWO: animated_sprite.play("Stage2")
@@ -29,13 +33,15 @@ func _on_stage_change(new_stage: Stage) -> void:
 
 func _on_counter_change(new_counter: int) -> void:
 	counter = new_counter
-	if counter > raphs_needed[current_stage]:
+	progress_bar.value = counter
+	if counter >= raphs_needed[current_stage]:
 		match current_stage:
 			Stage.ONE: current_stage = Stage.TWO
 			Stage.TWO: current_stage = Stage.THREE
 
 func _ready() -> void:
 	current_stage = Stage.ONE
+	progress_bar.min_value = 0
 	interactable_area.interacted.connect(_on_interact)
 
 func _on_interact(player: Player) -> void:

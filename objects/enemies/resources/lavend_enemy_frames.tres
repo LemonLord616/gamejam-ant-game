@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dddqmf454gqkk"]
+
+[ext_resource type="Texture2D" uid="uid://bot26no7hd3iv" path="res://assets/Monsters/Lavanda/Outline1.png" id="1_l60hp"]
+[ext_resource type="Texture2D" uid="uid://c8pgxq53s6t2h" path="res://assets/Monsters/Lavanda/Outline2.png" id="2_mb70h"]
+[ext_resource type="Texture2D" uid="uid://bel7b07yjv54k" path="res://assets/Monsters/Lavanda/Outline3.png" id="3_lkovu"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l60hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mb70h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lkovu")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]

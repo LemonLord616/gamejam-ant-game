@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MotionProfileResource" load_steps=2 format=3 uid="uid://cfpdobbd6r3np"]
+
+[ext_resource type="Script" uid="uid://8y7abee8vshc" path="res://objects/player/resources/motion_profile.gd" id="1_7pioh"]
+
+[resource]
+script = ExtResource("1_7pioh")
+power = 5000.0
+max_force = 800.0
+metadata/_custom_type_script = "uid://8y7abee8vshc"

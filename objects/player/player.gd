@@ -20,6 +20,7 @@ func _ready() -> void:
 	lock_rotation = true
 	gravity_scale = 0.0
 	controller.exit.connect(_on_exit)
+	set_item.call_deferred(ItemManager.Item.SeaLavend)
 
 func _on_exit() -> void:
 	ui.hide_text()
