@@ -4,27 +4,13 @@ class_name AIController
 signal mob_direction(is_right_dir: bool)
 var is_mob_right_dir := false
 
-
 @export var mob: Mob
-@export var debug_raycast: RayCast2D
 
-@export_range(1.0, 10.0, 0.5, "sec") var move_change_mean := 3.0
 var move_vector := Vector2.ZERO
-var move_timer := 0.0
 
 @onready var motion_profile := mob.motion_profile
 
-func _ready() -> void:
-	mob.body_entered.connect(_on_mob_collided)
-
-func _on_mob_collided(_body: Node) -> void:
-	move_timer = 0.0
-
 func _physics_process(delta: float) -> void:
-	move_timer -= delta
-	if move_timer < 0:
-		_randomize_move_vector()
-
 	var power = motion_profile.power
 	var max_force = motion_profile.max_force
 
@@ -51,12 +37,13 @@ func _apply_move(power: float, max_force: float) -> void:
 	
 	var move_force = clamp(force_magnitude, 0, max_force) * move_vector
 	
-	if debug_raycast:
-		debug_raycast.target_position = move_force
-	
 	mob.apply_force(move_force)
 
-func _randomize_move_vector() -> void:
-	move_vector = Vector2.from_angle(randf() * 2 * PI)
-	var u = max(randf(), 0.0001)
-	move_timer = -log(u) * move_change_mean
+#func _randomize_move_vector() -> void:
+	#move_vector = Vector2.from_angle(randf() * 2 * PI)
+	#var u = max(randf(), 0.0001)
+	#move_timer = -log(u) * move_change_mean
+	
+func set_move_direction(direction: Vector2) -> void:
+	move_vector = direction
+	pass

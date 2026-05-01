@@ -21,7 +21,6 @@ signal exit
 @onready var motion_profile := player.motion_profile
 @onready var prefix := "p" + str(player_id) + "_"
 
-
 func _ready() -> void:
 	if not enabled:
 		queue_free()
