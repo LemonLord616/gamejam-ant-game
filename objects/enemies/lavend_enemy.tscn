@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://url1wecmn1af"]
+
+[ext_resource type="Script" uid="uid://s3noov0do6hk" path="res://objects/enemies/lavend_enemy.gd" id="1_37sys"]
+[ext_resource type="SpriteFrames" uid="uid://dddqmf454gqkk" path="res://objects/enemies/resources/lavend_enemy_frames.tres" id="1_yilj5"]
+[ext_resource type="Resource" uid="uid://cfpdobbd6r3np" path="res://objects/enemies/resources/lavend_motion_profile.tres" id="2_bts73"]
+[ext_resource type="Shape2D" uid="uid://bd0kv3568auol" path="res://objects/enemies/resources/enemy_collision_shape.tres" id="2_tpxux"]
+[ext_resource type="Script" uid="uid://blyion2ocd1fb" path="res://objects/enemies/ai_controller.gd" id="4_1bd6l"]
+
+[node name="LavendEnemy" type="RigidBody2D"]
+mass = 5.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_37sys")
+motion_profile = ExtResource("2_bts73")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_yilj5")
+animation = &"Run"
+frame_progress = 0.7074272
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = ExtResource("2_tpxux")
+
+[node name="AIController" type="Node" parent="." node_paths=PackedStringArray("mob", "debug_raycast")]
+script = ExtResource("4_1bd6l")
+mob = NodePath("..")
+debug_raycast = NodePath("../Debug")
+metadata/_custom_type_script = "uid://blyion2ocd1fb"
+
+[node name="Debug" type="RayCast2D" parent="."]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://b20bsmnvpv2xv"]
 
 [ext_resource type="Script" uid="uid://rlwbtqmixcex" path="res://objects/big_momma/big_momma.gd" id="1_2uxpq"]
-[ext_resource type="Shape2D" uid="uid://dqbl2d61heuht" path="res://objects/big_momma/resources/momma_base_shape.tres" id="1_pyydn"]
 [ext_resource type="Texture2D" uid="uid://0wqupxgkx8kg" path="res://assets/old_sprites/shadow_big.png" id="2_3ulig"]
 [ext_resource type="SpriteFrames" uid="uid://8y8lgoqwali6" path="res://objects/big_momma/resources/momma_frames.tres" id="2_bybbq"]
 [ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="3_wdlmx"]
+[ext_resource type="Shape2D" uid="uid://djm7y20xmiif1" path="res://objects/big_momma/resources/momma_collision_shape.tres" id="4_3ulig"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdlmx"]
 radius = 30.0
@@ -25,8 +25,9 @@ frame_progress = 0.7082222
 speed_scale = 0.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = ExtResource("1_pyydn")
+position = Vector2(0, 10)
+rotation = 1.5707964
+shape = ExtResource("4_3ulig")
 
 [node name="InteractableArea" type="Area2D" parent="."]
 unique_name_in_owner = true

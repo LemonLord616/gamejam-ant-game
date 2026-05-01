@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bohh4u10a60hw"]
+
+[ext_resource type="Script" uid="uid://drwkptmuk7t63" path="res://objects/enemies/sunny_lavend_enemy.gd" id="1_18kwg"]
+[ext_resource type="Resource" uid="uid://dwbesx2im802v" path="res://objects/enemies/resources/sunny_lavend_motion_profile.tres" id="2_18kwg"]
+[ext_resource type="SpriteFrames" uid="uid://l1bkflljsj5e" path="res://objects/enemies/resources/sunny_lavend_enemy_frames.tres" id="3_kfk45"]
+[ext_resource type="Shape2D" uid="uid://bd0kv3568auol" path="res://objects/enemies/resources/enemy_collision_shape.tres" id="3_y0b6d"]
+[ext_resource type="Script" uid="uid://blyion2ocd1fb" path="res://objects/enemies/ai_controller.gd" id="4_kfk45"]
+
+[node name="SunnyLavendEnemy" type="RigidBody2D"]
+mass = 5.0
+script = ExtResource("1_18kwg")
+motion_profile = ExtResource("2_18kwg")
+metadata/_custom_type_script = "uid://dkh3jaaybgbdk"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("3_kfk45")
+animation = &"Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = ExtResource("3_y0b6d")
+
+[node name="AIController" type="Node" parent="." node_paths=PackedStringArray("mob", "debug_raycast")]
+script = ExtResource("4_kfk45")
+mob = NodePath("..")
+debug_raycast = NodePath("../Debug")
+metadata/_custom_type_script = "uid://blyion2ocd1fb"
+
+[node name="Debug" type="RayCast2D" parent="."]

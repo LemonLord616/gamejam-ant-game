@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://brvnxdo2awpch"]
+[gd_scene load_steps=18 format=3 uid="uid://brvnxdo2awpch"]
 
 [ext_resource type="Texture2D" uid="uid://dnkxxx05e8wxs" path="res://assets/keys.png" id="1_ks8t7"]
 [ext_resource type="Script" uid="uid://djq8lx1lru2c6" path="res://global/ui/ui.gd" id="1_tf0e0"]
 [ext_resource type="FontFile" uid="uid://vvbf66v3wf2t" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="2_wl5ax"]
 [ext_resource type="FontFile" uid="uid://cix4vhs80xhtn" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Doublespace/PeaberryDoublespace.ttf" id="3_vkava"]
 [ext_resource type="FontFile" uid="uid://0857anogqe26" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Monospace/PeaberryMono.ttf" id="4_tf0e0"]
+[ext_resource type="Texture2D" uid="uid://bgk16qsdvaavi" path="res://assets/health_bar_background.png" id="6_mqtu6"]
+[ext_resource type="Texture2D" uid="uid://dd8s8ujdp68nr" path="res://assets/health_bar.png" id="7_pqppt"]
+[ext_resource type="Texture2D" uid="uid://fqdpoqxouyy4" path="res://assets/stamina_bar_background.png" id="8_my4nq"]
+[ext_resource type="Texture2D" uid="uid://cr06ellfiujj7" path="res://assets/stamina_bar.png" id="9_1p3ya"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wl5ax"]
 atlas = ExtResource("1_ks8t7")
@@ -29,14 +33,37 @@ font = ExtResource("2_wl5ax")
 atlas = ExtResource("1_ks8t7")
 region = Rect2(64, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ss0x"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(48, 32, 32, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bo1jx"]
 atlas = ExtResource("1_ks8t7")
 region = Rect2(32, 32, 16, 16)
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("text_panel", "label")]
+[node name="UI" type="CanvasLayer"]
 script = ExtResource("1_tf0e0")
-text_panel = NodePath("Text")
-label = NodePath("Text/RichTextLabel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(128, 36)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 44.0
+
+[node name="Health" type="TextureProgressBar" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("6_mqtu6")
+texture_progress = ExtResource("7_pqppt")
+
+[node name="Stamina" type="TextureProgressBar" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("8_my4nq")
+texture_progress = ExtResource("9_1p3ya")
 
 [node name="ControlsHelp" type="Panel" parent="."]
 anchors_preset = 3
@@ -102,7 +129,30 @@ layout_mode = 2
 text = "Interact"
 label_settings = SubResource("LabelSettings_vkava")
 
+[node name="SHIFT" type="HBoxContainer" parent="ControlsHelp"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -48.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ControlsHelp/SHIFT"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7ss0x")
+
+[node name="Label" type="Label" parent="ControlsHelp/SHIFT"]
+layout_mode = 2
+text = "Sprint"
+label_settings = SubResource("LabelSettings_vkava")
+
 [node name="Text" type="Panel" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 300)
 anchors_preset = 8
 anchor_left = 0.5
@@ -117,6 +167,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Text"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 300)
 layout_mode = 1
 anchors_preset = 8

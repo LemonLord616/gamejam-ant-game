@@ -1,8 +1,10 @@
 extends CanvasLayer
 class_name UI
 
-@export var text_panel: Panel
-@export var label: RichTextLabel
+@onready var text_panel: Panel = %Text
+@onready var label: RichTextLabel = %RichTextLabel
+@onready var health_bar: TextureProgressBar = %Health
+@onready var stamina_bar: TextureProgressBar = %Stamina
 
 func _ready() -> void:
 	text_panel.visible = false

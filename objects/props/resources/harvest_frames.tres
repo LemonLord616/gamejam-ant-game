@@ -1,14 +1,14 @@
 [gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://tckak8w6ijui"]
 
-[ext_resource type="Texture2D" uid="uid://b2mybl4kqi286" path="res://assets/Lavanda/Lavanda/1.png" id="1_vhilu"]
-[ext_resource type="Texture2D" uid="uid://btskc7kopx7ai" path="res://assets/Lavanda/Lavanda/2.png" id="2_wlxow"]
-[ext_resource type="Texture2D" uid="uid://cbk0k4njuf8bi" path="res://assets/Lavanda/Lavanda/3.png" id="3_0afxa"]
-[ext_resource type="Texture2D" uid="uid://dr6w5sho4rfit" path="res://assets/Lavanda/Sea Lavanda/1.png" id="4_s8gus"]
-[ext_resource type="Texture2D" uid="uid://42yvg1sfd4i2" path="res://assets/Lavanda/Sea Lavanda/2.png" id="5_wlx8b"]
-[ext_resource type="Texture2D" uid="uid://lfpdvvlip4ea" path="res://assets/Lavanda/Sea Lavanda/3.png" id="6_vqbwj"]
-[ext_resource type="Texture2D" uid="uid://bv6e2nlsxn3dw" path="res://assets/Lavanda/Sunny Lavanda/1.png" id="7_xl7gw"]
-[ext_resource type="Texture2D" uid="uid://bswpau6o46lls" path="res://assets/Lavanda/Sunny Lavanda/2.png" id="8_j4ljd"]
-[ext_resource type="Texture2D" uid="uid://dug0oreeq0qbm" path="res://assets/Lavanda/Sunny Lavanda/3.png" id="9_dc42g"]
+[ext_resource type="Texture2D" uid="uid://c6igdyb55enc5" path="res://assets/Lavanda/Lavanda/1.png" id="1_vhilu"]
+[ext_resource type="Texture2D" uid="uid://uiehge8o54on" path="res://assets/Lavanda/Lavanda/2.png" id="2_wlxow"]
+[ext_resource type="Texture2D" uid="uid://d4hsvmqkavbod" path="res://assets/Lavanda/Lavanda/3.png" id="3_0afxa"]
+[ext_resource type="Texture2D" uid="uid://djqrk135bu5gm" path="res://assets/Lavanda/Sea Lavanda/1.png" id="4_s8gus"]
+[ext_resource type="Texture2D" uid="uid://1l42dkkhvndx" path="res://assets/Lavanda/Sea Lavanda/2.png" id="5_wlx8b"]
+[ext_resource type="Texture2D" uid="uid://cujasv074kndt" path="res://assets/Lavanda/Sea Lavanda/3.png" id="6_vqbwj"]
+[ext_resource type="Texture2D" uid="uid://dcib36kbatf6v" path="res://assets/Lavanda/Sunny Lavanda/1.png" id="7_xl7gw"]
+[ext_resource type="Texture2D" uid="uid://bw7isgwf7v2ka" path="res://assets/Lavanda/Sunny Lavanda/2.png" id="8_j4ljd"]
+[ext_resource type="Texture2D" uid="uid://bp0yiao5xurfn" path="res://assets/Lavanda/Sunny Lavanda/3.png" id="9_dc42g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vr7kp"]
 atlas = ExtResource("1_vhilu")

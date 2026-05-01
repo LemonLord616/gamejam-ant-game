@@ -51,6 +51,8 @@ func _ready() -> void:
 	progress_bar.visible = false
 
 func _on_interact(player: Player) -> void:
+	if not planted and not player.has_item():
+		return
 	if planted and player.has_item():
 		return
 	if player.is_item(ItemManager.Item.Seed):
@@ -61,7 +63,7 @@ func _on_interact(player: Player) -> void:
 		growth_timer = growth_time
 	if current_stage == Stage.MATURE:
 		planted = false
-		pass # TODO: Harvest Logic (Give item)
+		player.set_item(ItemManager.Item.Lavend)
 
 func _physics_process(delta: float) -> void:
 	if not planted:
