@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyfxep34bcyf4"]
+
+[ext_resource type="Texture2D" uid="uid://ba0v5mfc0iqyt" path="res://assets/Lavanda/Garden/1.png" id="1_2tjel"]
+[ext_resource type="Script" uid="uid://sbjruphcaue" path="res://objects/props/harvest/harvest.gd" id="1_14k0j"]
+[ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="2_d8wv7"]
+[ext_resource type="SpriteFrames" uid="uid://tckak8w6ijui" path="res://objects/props/resources/harvest_frames.tres" id="3_xj26h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2tjel"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_14k0j"]
+radius = 20.0
+height = 60.0
+
+[node name="Harvest" type="StaticBody2D"]
+script = ExtResource("1_14k0j")
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture = ExtResource("1_2tjel")
+
+[node name="Harvest" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+sprite_frames = ExtResource("3_xj26h")
+animation = &"Lavanda"
+speed_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2tjel")
+
+[node name="InteractableArea" type="Area2D" parent="." node_paths=PackedStringArray("prop_sprite")]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("2_d8wv7")
+prop_sprite = NodePath("../Ground")
+metadata/_custom_type_script = "uid://cklw405828cv8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_14k0j")
+debug_color = Color(0.60818726, 0.3639333, 1, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 4)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 36.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+show_percentage = false

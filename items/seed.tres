@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bon1ab1wsqio0"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_vi7yq"]
+[ext_resource type="Texture2D" uid="uid://wpfitrns52et" path="res://assets/seed.png" id="2_vas8u"]
+
+[resource]
+script = ExtResource("1_vi7yq")
+name = &"Seed"
+texture = ExtResource("2_vas8u")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"

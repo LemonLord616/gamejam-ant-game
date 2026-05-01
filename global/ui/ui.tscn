@@ -1,0 +1,167 @@
+[gd_scene load_steps=13 format=3 uid="uid://brvnxdo2awpch"]
+
+[ext_resource type="Texture2D" uid="uid://dnkxxx05e8wxs" path="res://assets/keys.png" id="1_ks8t7"]
+[ext_resource type="Script" uid="uid://djq8lx1lru2c6" path="res://global/ui/ui.gd" id="1_tf0e0"]
+[ext_resource type="FontFile" uid="uid://vvbf66v3wf2t" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="2_wl5ax"]
+[ext_resource type="FontFile" uid="uid://cix4vhs80xhtn" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Doublespace/PeaberryDoublespace.ttf" id="3_vkava"]
+[ext_resource type="FontFile" uid="uid://0857anogqe26" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Monospace/PeaberryMono.ttf" id="4_tf0e0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl5ax"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkava"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tf0e0"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obcwv"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkava"]
+font = ExtResource("2_wl5ax")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks8t7"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo1jx"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(32, 32, 16, 16)
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("text_panel", "label")]
+script = ExtResource("1_tf0e0")
+text_panel = NodePath("Text")
+label = NodePath("Text/RichTextLabel")
+
+[node name="ControlsHelp" type="Panel" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="WASD" type="HBoxContainer" parent="ControlsHelp"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -32.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ControlsHelp/WASD"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_wl5ax")
+
+[node name="TextureRect2" type="TextureRect" parent="ControlsHelp/WASD"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vkava")
+
+[node name="TextureRect3" type="TextureRect" parent="ControlsHelp/WASD"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_tf0e0")
+
+[node name="TextureRect4" type="TextureRect" parent="ControlsHelp/WASD"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_obcwv")
+
+[node name="Label" type="Label" parent="ControlsHelp/WASD"]
+layout_mode = 2
+text = "Move"
+label_settings = SubResource("LabelSettings_vkava")
+
+[node name="E_Interact" type="HBoxContainer" parent="ControlsHelp"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ControlsHelp/E_Interact"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ks8t7")
+
+[node name="Label" type="Label" parent="ControlsHelp/E_Interact"]
+layout_mode = 2
+text = "Interact"
+label_settings = SubResource("LabelSettings_vkava")
+
+[node name="Text" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Text"]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5ax")
+theme_override_fonts/bold_font = ExtResource("3_vkava")
+theme_override_fonts/bold_italics_font = ExtResource("3_vkava")
+theme_override_fonts/italics_font = ExtResource("4_tf0e0")
+theme_override_fonts/mono_font = ExtResource("4_tf0e0")
+bbcode_enabled = true
+text = "[center][b]Chapter 1: The Awakening[/b][/center]
+
+The night was dark, far darker than any that had come before it. A chilling wind swept through the valley, carrying with it a sense of foreboding.
+
+[color=blue][i]\"This is a blue, italicized sentence,\"[/i][/color] she whispered, reading the weathered stone.
+
+She knew her [u]long and arduous journey[/u] was finally at an end."
+
+[node name="Esc" type="HBoxContainer" parent="Text"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = -16.0
+offset_right = 28.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Text/Esc"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_bo1jx")
+
+[node name="Label" type="Label" parent="Text/Esc"]
+layout_mode = 2
+text = "Exit"
+label_settings = SubResource("LabelSettings_vkava")

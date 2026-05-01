@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MotionProfileResource" load_steps=2 format=3 uid="uid://bbfhnqg1whbc8"]
+
+[ext_resource type="Script" uid="uid://8y7abee8vshc" path="res://objects/player/resources/motion_profile.gd" id="1_f8hn3"]
+
+[resource]
+script = ExtResource("1_f8hn3")
+damp = 100.0
+metadata/_custom_type_script = "uid://8y7abee8vshc"

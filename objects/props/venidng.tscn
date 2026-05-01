@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://db0jicoho6unv"]
+
+[ext_resource type="Texture2D" uid="uid://djq73khwbp8tc" path="res://assets/old_sprites/shadow.png" id="1_j3ow1"]
+[ext_resource type="Script" uid="uid://cxv8kqne73kdg" path="res://objects/props/venidng.gd" id="1_ps54x"]
+[ext_resource type="Texture2D" uid="uid://bsm6raq2nbk2j" path="res://assets/vending.png" id="2_x81s4"]
+[ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="3_x81s4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ps54x"]
+radius = 4.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxfpu"]
+radius = 20.0
+height = 60.0
+
+[node name="Venidng" type="StaticBody2D"]
+script = ExtResource("1_ps54x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ps54x")
+
+[node name="InteractableArea" type="Area2D" parent="." node_paths=PackedStringArray("prop_sprite")]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("3_x81s4")
+prop_sprite = NodePath("../Sprite2D")
+metadata/_custom_type_script = "uid://cklw405828cv8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vxfpu")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_j3ow1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_x81s4")
+hframes = 2

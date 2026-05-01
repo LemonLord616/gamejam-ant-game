@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cde8qxgykvqjs"]
+
+[ext_resource type="Script" uid="uid://woo3xbchoimx" path="res://objects/floating_item/floating_item.gd" id="1_byv8c"]
+[ext_resource type="Curve" uid="uid://d0m7fahinok13" path="res://objects/floating_item/floating_item_default_follow_curve.tres" id="2_egygi"]
+[ext_resource type="FontFile" uid="uid://vvbf66v3wf2t" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="4_g5g4j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5g4j"]
+font = ExtResource("4_g5g4j")
+font_size = 8
+
+[node name="FloatingItem" type="Node2D"]
+script = ExtResource("1_byv8c")
+follow_curve = ExtResource("2_egygi")
+offset = Vector2(0, -32)
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="ItemLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -16.0
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_g5g4j")
