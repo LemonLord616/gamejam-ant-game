@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b20bsmnvpv2xv"]
+
+[ext_resource type="Script" uid="uid://rlwbtqmixcex" path="res://objects/big_momma/big_momma.gd" id="1_2uxpq"]
+[ext_resource type="Shape2D" uid="uid://dqbl2d61heuht" path="res://objects/big_momma/resources/momma_base_shape.tres" id="1_pyydn"]
+[ext_resource type="Texture2D" uid="uid://0wqupxgkx8kg" path="res://assets/old_sprites/shadow_big.png" id="2_3ulig"]
+[ext_resource type="SpriteFrames" uid="uid://8y8lgoqwali6" path="res://objects/big_momma/resources/momma_frames.tres" id="2_bybbq"]
+[ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="3_wdlmx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdlmx"]
+radius = 30.0
+height = 100.0
+
+[node name="BigMomma" type="StaticBody2D"]
+script = ExtResource("1_2uxpq")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_3ulig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_bybbq")
+animation = &"Stage1"
+frame_progress = 0.7082222
+speed_scale = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = ExtResource("1_pyydn")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+visible = false
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("3_wdlmx")
+selection_size = Vector2(64, 64)
+metadata/_custom_type_script = "uid://cklw405828cv8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wdlmx")
+debug_color = Color(0.60818726, 0.3639333, 1, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 8)
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 72.0
+offset_bottom = 32.0
+rotation = -1.5707964
+show_percentage = false

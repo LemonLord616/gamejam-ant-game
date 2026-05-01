@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dyfxep34bcyf4"]
 
-[ext_resource type="Texture2D" uid="uid://ba0v5mfc0iqyt" path="res://assets/Lavanda/Garden/1.png" id="1_2tjel"]
+[ext_resource type="Texture2D" uid="uid://dfg2c426s36vf" path="res://assets/Lavanda/Garden/1.png" id="1_2tjel"]
 [ext_resource type="Script" uid="uid://sbjruphcaue" path="res://objects/props/harvest/harvest.gd" id="1_14k0j"]
 [ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="2_d8wv7"]
 [ext_resource type="SpriteFrames" uid="uid://tckak8w6ijui" path="res://objects/props/resources/harvest_frames.tres" id="3_xj26h"]
@@ -29,12 +29,12 @@ position = Vector2(0, 6)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_2tjel")
 
-[node name="InteractableArea" type="Area2D" parent="." node_paths=PackedStringArray("prop_sprite")]
+[node name="InteractableArea" type="Area2D" parent="." node_paths=PackedStringArray("prop")]
 unique_name_in_owner = true
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("2_d8wv7")
-prop_sprite = NodePath("../Ground")
+prop = NodePath("..")
 metadata/_custom_type_script = "uid://cklw405828cv8"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
