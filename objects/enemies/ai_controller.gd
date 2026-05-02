@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 
 	if !move_vector.is_zero_approx():
 		_apply_move(power, max_force)
-		return
+	mob.apply_force(-motion_profile.damp * mob.linear_velocity)
 
 func _apply_move(power: float, max_force: float) -> void:
 	if move_vector.is_zero_approx():

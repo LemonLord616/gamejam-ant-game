@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://url1wecmn1af"]
+[gd_scene load_steps=8 format=3 uid="uid://url1wecmn1af"]
 
 [ext_resource type="Script" uid="uid://s3noov0do6hk" path="res://objects/enemies/lavend_enemy.gd" id="1_37sys"]
 [ext_resource type="SpriteFrames" uid="uid://dddqmf454gqkk" path="res://objects/enemies/resources/lavend_enemy_frames.tres" id="1_yilj5"]
 [ext_resource type="Resource" uid="uid://cfpdobbd6r3np" path="res://objects/enemies/resources/lavend_motion_profile.tres" id="2_bts73"]
 [ext_resource type="Shape2D" uid="uid://bd0kv3568auol" path="res://objects/enemies/resources/enemy_collision_shape.tres" id="2_tpxux"]
 [ext_resource type="Script" uid="uid://blyion2ocd1fb" path="res://objects/enemies/ai_controller.gd" id="4_1bd6l"]
+[ext_resource type="Script" uid="uid://hvtdpo1f51w" path="res://objects/enemies/attack_area.gd" id="6_x7ksa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7ksa"]
+radius = 8.0
 
 [node name="LavendEnemy" type="RigidBody2D"]
 mass = 5.0
@@ -29,6 +33,19 @@ unique_name_in_owner = true
 script = ExtResource("4_1bd6l")
 mob = NodePath("..")
 metadata/_custom_type_script = "uid://blyion2ocd1fb"
+
+[node name="Debug" type="RayCast2D" parent="."]
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("6_x7ksa")
+metadata/_custom_type_script = "uid://hvtdpo1f51w"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_x7ksa")
 
 [node name="ObstacleRaycast" type="RayCast2D" parent="."]
 unique_name_in_owner = true

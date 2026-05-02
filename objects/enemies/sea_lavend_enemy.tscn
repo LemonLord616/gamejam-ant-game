@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvmicmffmqscd"]
+[gd_scene load_steps=7 format=3 uid="uid://bvmicmffmqscd"]
 
 [ext_resource type="Script" uid="uid://cnney00ogtklb" path="res://objects/enemies/sea_lavend_enemy.gd" id="1_8yu72"]
 [ext_resource type="SpriteFrames" uid="uid://c8q6j3tlugho" path="res://objects/enemies/resources/sea_lavend_enemy_frames.tres" id="2_8yu72"]
 [ext_resource type="Resource" uid="uid://hdd35o5j0o64" path="res://objects/enemies/resources/sea_lavend_motion_profile.tres" id="2_l3qm6"]
 [ext_resource type="Shape2D" uid="uid://bd0kv3568auol" path="res://objects/enemies/resources/enemy_collision_shape.tres" id="4_q47dx"]
+[ext_resource type="Script" uid="uid://hvtdpo1f51w" path="res://objects/enemies/attack_area.gd" id="5_l3qm6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3qm6"]
+height = 48.0
 
 [node name="SeaLavendEnemy" type="RigidBody2D"]
 collision_layer = 0
@@ -38,3 +42,16 @@ collision_mask = 0
 unique_name_in_owner = true
 width = 1.0
 texture_mode = 2
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("5_l3qm6")
+knockback_impulse = 15000.0
+damage = 2
+metadata/_custom_type_script = "uid://hvtdpo1f51w"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l3qm6")

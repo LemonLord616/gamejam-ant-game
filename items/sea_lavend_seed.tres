@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://bh24dssh8uxk4"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_onybi"]
+[ext_resource type="Texture2D" uid="uid://bpilqlbpk5mxa" path="res://assets/seeds.png" id="2_b8qn8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_susys"]
+atlas = ExtResource("2_b8qn8")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_onybi")
+name = &"Lavend Seed"
+texture = SubResource("AtlasTexture_susys")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"

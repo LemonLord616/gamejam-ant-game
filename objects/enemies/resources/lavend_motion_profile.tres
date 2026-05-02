@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_7pioh")
-power = 5000.0
-max_force = 800.0
+power = 16000.0
+max_force = 1600.0
+damp = 5.0
 metadata/_custom_type_script = "uid://8y7abee8vshc"
