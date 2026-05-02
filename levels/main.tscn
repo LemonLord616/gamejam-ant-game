@@ -126,11 +126,11 @@ position = Vector2(-208, -432)
 dispense_item = 6
 
 [node name="Venidng8" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
-position = Vector2(-176, -432)
+position = Vector2(-173, -432)
 dispense_item = 7
 
 [node name="Venidng9" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
-position = Vector2(-144, -432)
+position = Vector2(-135, -432)
 dispense_item = 8
 
 [node name="BigMomma" parent="YSort" instance=ExtResource("10_jw1n3")]
