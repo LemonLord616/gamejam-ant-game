@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b518b0w1lcjsm"]
+[gd_scene load_steps=15 format=4 uid="uid://b518b0w1lcjsm"]
 
 [ext_resource type="TileSet" uid="uid://cm6r6g5w0x1wb" path="res://levels/resources/main_tile_set.tres" id="1_etqu2"]
 [ext_resource type="Script" uid="uid://2c8ehludcpi4" path="res://levels/camera_2d.gd" id="2_6et1j"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b20bsmnvpv2xv" path="res://objects/big_momma/big_momma.tscn" id="10_jw1n3"]
 [ext_resource type="PackedScene" uid="uid://url1wecmn1af" path="res://objects/enemies/lavend_enemy.tscn" id="11_xdh4e"]
 [ext_resource type="PackedScene" uid="uid://bvmicmffmqscd" path="res://objects/enemies/sea_lavend_enemy.tscn" id="13_6yxbg"]
+[ext_resource type="PackedScene" uid="uid://bqpgt18tnd3aa" path="res://objects/props/customer/customer_queue.tscn" id="14_6yxbg"]
 
 [node name="Main" type="Node2D"]
 
@@ -153,3 +154,6 @@ collision_layer = 2
 
 [node name="FloatingItem" parent="YSort" node_paths=PackedStringArray("player") instance=ExtResource("4_m1504")]
 player = NodePath("../Player")
+
+[node name="CustomerQueue" parent="YSort" instance=ExtResource("14_6yxbg")]
+position = Vector2(-272, -112)

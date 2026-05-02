@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqpgt18tnd3aa"]
+
+[ext_resource type="Script" uid="uid://b35ilcg1qmguo" path="res://objects/props/customer/customer_queue.gd" id="1_cjfxa"]
+[ext_resource type="SpriteFrames" uid="uid://ch5cnc3c0051v" path="res://objects/props/customer/resources/crowd_queue_frames.tres" id="1_h2ok2"]
+[ext_resource type="SpriteFrames" uid="uid://dktjdxbncfjv" path="res://objects/props/customer/resources/customer_frames.tres" id="2_2jaim"]
+[ext_resource type="Script" uid="uid://4v75ngdx38a0" path="res://objects/props/customer/lavend_visuals.gd" id="4_4x27a"]
+[ext_resource type="Texture2D" uid="uid://8bnm85igeru6" path="res://assets/done_sign.png" id="5_e48u2"]
+[ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="6_w85dp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w85dp"]
+radius = 30.0
+height = 80.0
+
+[node name="CustomerQueue" type="Node2D"]
+script = ExtResource("1_cjfxa")
+
+[node name="Queue" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -96)
+sprite_frames = ExtResource("1_h2ok2")
+frame_progress = 0.7037386
+speed_scale = 0.3
+
+[node name="Customer" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_2jaim")
+speed_scale = 0.0
+
+[node name="ItemVisuals" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -16)
+script = ExtResource("4_4x27a")
+done_mark = ExtResource("5_e48u2")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("6_w85dp")
+metadata/_custom_type_script = "uid://cklw405828cv8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_w85dp")
