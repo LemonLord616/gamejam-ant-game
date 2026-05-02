@@ -13,5 +13,6 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var impulse_dir := (body.global_position - global_position).normalized()
+		print(impulse_dir)
 		body.apply_impulse(impulse_dir * knockback_impulse)
 		body.get_damage(damage)

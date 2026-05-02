@@ -56,7 +56,7 @@ func _move_to_target(delta: float) -> void:
 
 
 func _reset_target_timer() -> void:
-	print("Target timer is on, not targeting!")
+	#print("Target timer is on, not targeting!")
 	_following_target = false
 	_target_timer = randf_range(
 		target_select_timer_min, 
@@ -69,7 +69,7 @@ func _handle_target_timer(delta: float) -> void:
 	if _target_timer > 0.0:
 		return
 	
-	print("Targeting player!")
+	#print("Targeting player!")
 	_following_target = true
 	var direction := PositionTracker.current_position - global_position
 	direction = direction.normalized()

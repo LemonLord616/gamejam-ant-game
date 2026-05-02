@@ -1,4 +1,4 @@
-xtends Node
+extends Node
 class_name PlayerController
 
 signal player_move(flag: bool)
@@ -73,7 +73,8 @@ func _physics_process(delta: float) -> void:
 		_apply_move(move_vector, power, max_force)
 		return
 
-	if player.linear_velocity.length() < motion_profile.decisive_stop_threshold:
+	if is_player_moving and \
+		player.linear_velocity.length() < motion_profile.decisive_stop_threshold:
 		player.linear_velocity = Vector2.ZERO
 		player.angular_velocity = 0.0
 
