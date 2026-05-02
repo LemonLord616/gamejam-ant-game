@@ -20,6 +20,8 @@ var growth_timer := 0.0
 @export var current_stage := Stage.SMALL : set = _set_harvest_stage
 @export var current_type := Type.DEFAULT : set = _set_harvest_type
 
+@export var monsters: Dictionary[Type, PackedScene]
+@export_range(0.0, 1.0, 0.01) var monster_change = 0.5
 
 func _set_planted(new_planted: bool) -> void:
 	planted = new_planted
@@ -39,6 +41,16 @@ func _set_harvest_stage(new_stage: Stage) -> void:
 		Stage.SMALL: harvest_sprite.frame = 0
 		Stage.SPROUT: harvest_sprite.frame = 1
 		Stage.MATURE: harvest_sprite.frame = 2
+	
+	if current_stage == Stage.MATURE:
+		if randf() <= monster_change:
+			_spawn_monster()
+			planted = false
+
+func _spawn_monster() -> void:
+	var monster: Mob = monsters[current_type].instantiate()
+	monster.global_position = global_position
+	YSort.y_sort_node.add_child(monster)
 
 func _ready() -> void:
 	interactable_area.interacted.connect(_on_interact)
