@@ -37,7 +37,7 @@ tile_set = ExtResource("2_c7dyn")
 rendering_quadrant_size = 1
 
 [node name="Player" parent="YSort" instance=ExtResource("2_wdj6m")]
-position = Vector2(-16, -16)
+position = Vector2(48, -432)
 floating_item = null
 
 [node name="TrashCan" parent="YSort" instance=ExtResource("6_qy63d")]
