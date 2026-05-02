@@ -16,19 +16,21 @@ script = ExtResource("1_cjfxa")
 
 [node name="Queue" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -96)
+position = Vector2(0, -115)
+scale = Vector2(1.3, 1.3)
 sprite_frames = ExtResource("1_h2ok2")
 frame_progress = 0.035200447
 speed_scale = 0.3
 
 [node name="Customer" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+scale = Vector2(1.3, 1.3)
 sprite_frames = ExtResource("2_2jaim")
 speed_scale = 0.0
 
 [node name="ItemVisuals" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -16)
+position = Vector2(0, -30)
 script = ExtResource("4_4x27a")
 done_mark = ExtResource("5_e48u2")
 
