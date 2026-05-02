@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_cnpsw")
+power = 50000.0
+max_force = 2000.0
+damp = 127.7
 metadata/_custom_type_script = "uid://8y7abee8vshc"

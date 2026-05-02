@@ -28,10 +28,10 @@ position = Vector2(0, 14)
 rotation = 1.5707964
 shape = ExtResource("2_tpxux")
 
-[node name="AIController" type="Node" parent="." node_paths=PackedStringArray("mob", "debug_raycast")]
+[node name="AIController" type="Node" parent="." node_paths=PackedStringArray("mob")]
+unique_name_in_owner = true
 script = ExtResource("4_1bd6l")
 mob = NodePath("..")
-debug_raycast = NodePath("../Debug")
 metadata/_custom_type_script = "uid://blyion2ocd1fb"
 
 [node name="Debug" type="RayCast2D" parent="."]
@@ -44,3 +44,6 @@ metadata/_custom_type_script = "uid://hvtdpo1f51w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_x7ksa")
+[node name="ObstacleRaycast" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+target_position = Vector2(12.56, 33.525)

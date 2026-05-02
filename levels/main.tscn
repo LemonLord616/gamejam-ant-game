@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b518b0w1lcjsm"]
+[gd_scene load_steps=14 format=4 uid="uid://b518b0w1lcjsm"]
 
 [ext_resource type="TileSet" uid="uid://cm6r6g5w0x1wb" path="res://levels/resources/main_tile_set.tres" id="1_etqu2"]
 [ext_resource type="Script" uid="uid://2c8ehludcpi4" path="res://levels/camera_2d.gd" id="2_6et1j"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://b20bsmnvpv2xv" path="res://objects/big_momma/big_momma.tscn" id="10_jw1n3"]
 [ext_resource type="PackedScene" uid="uid://url1wecmn1af" path="res://objects/enemies/lavend_enemy.tscn" id="11_xdh4e"]
 [ext_resource type="PackedScene" uid="uid://bvmicmffmqscd" path="res://objects/enemies/sea_lavend_enemy.tscn" id="13_6yxbg"]
-[ext_resource type="PackedScene" uid="uid://bohh4u10a60hw" path="res://objects/enemies/sunny_lavend_enemy.tscn" id="14_4fc0e"]
 
 [node name="Main" type="Node2D"]
 
@@ -128,11 +127,33 @@ position = Vector2(64, -256)
 [node name="LavendEnemy" parent="YSort" instance=ExtResource("11_xdh4e")]
 position = Vector2(32, -128)
 
+[node name="SeaLavendEnemy6" parent="YSort" instance=ExtResource("13_6yxbg")]
+position = Vector2(750, 60)
+collision_layer = 2
+
+[node name="SeaLavendEnemy5" parent="YSort" instance=ExtResource("13_6yxbg")]
+position = Vector2(625, 50)
+collision_layer = 2
+
+[node name="SeaLavendEnemy4" parent="YSort" instance=ExtResource("13_6yxbg")]
+position = Vector2(500, 40)
+collision_layer = 2
+
+[node name="SeaLavendEnemy3" parent="YSort" instance=ExtResource("13_6yxbg")]
+position = Vector2(375, 30)
+collision_layer = 2
+
+[node name="SeaLavendEnemy2" parent="YSort" instance=ExtResource("13_6yxbg")]
+position = Vector2(250, 20)
+collision_layer = 2
+
 [node name="SeaLavendEnemy" parent="YSort" instance=ExtResource("13_6yxbg")]
-position = Vector2(-48, -80)
+position = Vector2(125, 10)
+collision_layer = 2
 
-[node name="SunnyLavendEnemy" parent="YSort" instance=ExtResource("14_4fc0e")]
-position = Vector2(112, 16)
-
-[node name="FloatingItem" parent="YSort" node_paths=PackedStringArray("player") instance=ExtResource("4_m1504")]
-player = NodePath("../Player")
+[node name="Zabor" type="TileMapLayer" parent="YSort"]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD4/wUAAQABAAIAAAD5/wUAAQABAAIAAAD6/wUAAQABAAIAAAD7/wUAAQABAAIAAAD8/wUAAQABAAIAAAD9/wUAAQABAAIAAAD+/wUAAQABAAIAAAD//wUAAQABAAIAAAAAAAUAAQABAAIAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQABAAIAAAAIAAUAAQACAAIAAAAIAAQAAQACAAEAAAAIAAMAAQACAAEAAAAIAAIAAQACAAEAAAAIAAEAAQACAAEAAAAIAAAAAQACAAEAAAAIAP//AQACAAEAAAAIAP7/AQACAAEAAAAIAP3/AQACAAEAAAAIAPz/AQACAAEAAAAIAPv/AQACAAEAAAAIAPr/AQACAAEAAAAIAPn/AQACAAEAAAAHAPj/AQABAAAAAAAGAPj/AQABAAAAAAAFAPj/AQABAAAAAAAEAPj/AQABAAAAAAADAPj/AQABAAAAAAACAPj/AQABAAAAAAABAPj/AQABAAAAAAAAAPj/AQABAAAAAAD///j/AQABAAAAAAD+//j/AQABAAAAAAD9//j/AQABAAAAAAD8//j/AQABAAAAAAD7//j/AQABAAAAAAD6//j/AQABAAAAAAD5//j/AQABAAAAAAD4//j/AQABAAAAAAD3//n/AQAAAAEAAAD3//r/AQAAAAEAAAD3//v/AQAAAAEAAAD3//z/AQAAAAEAAAD3//3/AQAAAAEAAAD3//7/AQAAAAEAAAD3////AQAAAAEAAAD3/wAAAQAAAAEAAAD3/wEAAQAAAAEAAAD3/wIAAQAAAAEAAAD3/wMAAQAAAAEAAAD3/wQAAQAAAAEAAAD3/wUAAQAAAAIAAAD3//j/AQAAAAAAAAAIAPj/AQACAAAAAAA=")
+tile_set = ExtResource("2_c7dyn")
+rendering_quadrant_size = 1

@@ -1,4 +1,4 @@
-extends Node
+xtends Node
 class_name PlayerController
 
 signal player_move(flag: bool)
