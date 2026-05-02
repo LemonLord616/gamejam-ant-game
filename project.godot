@@ -85,6 +85,10 @@ gp_run={
 2d_physics/layer_6="Player"
 2d_physics/layer_7="Interact"
 
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
