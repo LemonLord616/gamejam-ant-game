@@ -25,12 +25,11 @@ recipes = Array[ExtResource("3_plptf")]([ExtResource("4_5s6kh")])
 
 [node name="Shadow" type="Sprite2D" parent="."]
 texture = ExtResource("5_plptf")
-offset = Vector2(16, -10)
+offset = Vector2(16, -7)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = ExtResource("1_2homw")
-frame_progress = 0.1240172
 offset = Vector2(16, 0)
 
 [node name="ItemVisuals" type="Node2D" parent="."]
