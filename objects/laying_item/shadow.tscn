@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://7a5p7bubhgfe"]
+
+[ext_resource type="Texture2D" uid="uid://n42rxromibxm" path="res://assets/old_sprites/shadow_small.png" id="1_ftcqf"]
+[ext_resource type="Script" uid="uid://bqrq3gp5sn4ro" path="res://objects/laying_item/shadow.gd" id="1_oosbp"]
+
+[node name="Shadow" type="Sprite2D"]
+texture = ExtResource("1_ftcqf")
+script = ExtResource("1_oosbp")
+_offset = Vector2(0, -1)

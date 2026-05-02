@@ -10,6 +10,7 @@ var is_player_running := false
 
 signal interact
 signal exit
+signal drop
 
 @export var enabled := true
 
@@ -39,12 +40,14 @@ func _setup_controls() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed(prefix + "exit"):
-		exit.emit()
-	if event.is_action_pressed(prefix + "interact"):
-		interact.emit()
 	if event.is_action_pressed(prefix + "run"):
 		run_button_fresh = true
+	elif event.is_action_pressed(prefix + "interact"):
+		interact.emit()
+	elif event.is_action_pressed(prefix + "exit"):
+		exit.emit()
+	elif event.is_action_pressed(prefix + "drop"):
+		drop.emit()
 
 func _physics_process(delta: float) -> void:
 	var move_vector := _get_move_vector()

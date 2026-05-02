@@ -12,6 +12,9 @@ signal item_discarded
 @export var motion_profile: MotionProfileResource
 @export var controller: PlayerController
 @export var floating_item: FloatingItem
+@export var laying_item_scene: PackedScene
+@export_range(0.0, 1000.0, 0.1) var drop_impulse := 100.0
+
 
 @export_range(2.0, 20.0, 0.5, "sec") var run_full_duration := 5.0
 @export var max_health := 10
@@ -25,6 +28,7 @@ func _ready() -> void:
 	lock_rotation = true
 	gravity_scale = 0.0
 	controller.exit.connect(_on_exit)
+	controller.drop.connect(_on_drop)
 
 func _on_exit() -> void:
 	ui.hide_text()
@@ -51,6 +55,19 @@ func remove_item() -> void:
 	current_item_idx = -1
 	item_changed.emit(null)
 	item_discarded.emit()
+
+func _on_drop() -> void:
+	drop_item()
+
+func drop_item() -> void:
+	if not has_item():
+		return
+	var laying_item: LayingItem = laying_item_scene.instantiate()
+	YSort.y_sort_node.add_child(laying_item)
+	laying_item.set_item(current_item_idx)
+	laying_item.global_position = floating_item.global_position
+	laying_item.apply_impulse(Vector2.UP * drop_impulse)
+	remove_item()
 
 func get_damage(amount: int) -> void:
 	health_component.reduce_health(amount)

@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		if closest_area != null:
 			selected.emit(
 				closest_area.get_selection_size(),
-				closest_area.global_position
+				closest_area
 			)
 
 func _on_area_entered(area: Area2D) -> void:
