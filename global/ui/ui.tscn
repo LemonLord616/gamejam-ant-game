@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brvnxdo2awpch"]
+[gd_scene load_steps=19 format=3 uid="uid://brvnxdo2awpch"]
 
 [ext_resource type="Texture2D" uid="uid://dnkxxx05e8wxs" path="res://assets/keys.png" id="1_ks8t7"]
 [ext_resource type="Script" uid="uid://djq8lx1lru2c6" path="res://global/ui/ui.gd" id="1_tf0e0"]
@@ -36,6 +36,10 @@ region = Rect2(64, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ss0x"]
 atlas = ExtResource("1_ks8t7")
 region = Rect2(48, 32, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my4nq"]
+atlas = ExtResource("1_ks8t7")
+region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bo1jx"]
 atlas = ExtResource("1_ks8t7")
@@ -149,6 +153,28 @@ texture = SubResource("AtlasTexture_7ss0x")
 [node name="Label" type="Label" parent="ControlsHelp/SHIFT"]
 layout_mode = 2
 text = "Sprint"
+label_settings = SubResource("LabelSettings_vkava")
+
+[node name="Q_drop" type="HBoxContainer" parent="ControlsHelp"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -64.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ControlsHelp/Q_drop"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_my4nq")
+
+[node name="Label" type="Label" parent="ControlsHelp/Q_drop"]
+layout_mode = 2
+text = "Drop Item"
 label_settings = SubResource("LabelSettings_vkava")
 
 [node name="Text" type="Panel" parent="."]

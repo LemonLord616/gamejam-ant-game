@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqpgt18tnd3aa"]
+[gd_scene load_steps=9 format=3 uid="uid://bqpgt18tnd3aa"]
 
 [ext_resource type="Script" uid="uid://b35ilcg1qmguo" path="res://objects/props/customer/customer_queue.gd" id="1_cjfxa"]
 [ext_resource type="SpriteFrames" uid="uid://ch5cnc3c0051v" path="res://objects/props/customer/resources/crowd_queue_frames.tres" id="1_h2ok2"]
 [ext_resource type="SpriteFrames" uid="uid://dktjdxbncfjv" path="res://objects/props/customer/resources/customer_frames.tres" id="2_2jaim"]
-[ext_resource type="Script" uid="uid://4v75ngdx38a0" path="res://objects/props/customer/lavend_visuals.gd" id="4_4x27a"]
+[ext_resource type="PackedScene" uid="uid://bv66bf6hqlpiv" path="res://objects/laying_item/laying_item.tscn" id="2_uhwid"]
+[ext_resource type="Script" uid="uid://4v75ngdx38a0" path="res://objects/props/item_visuals.gd" id="4_4x27a"]
 [ext_resource type="Texture2D" uid="uid://8bnm85igeru6" path="res://assets/done_sign.png" id="5_e48u2"]
 [ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="6_w85dp"]
 
@@ -13,6 +14,7 @@ height = 120.0
 
 [node name="CustomerQueue" type="Node2D"]
 script = ExtResource("1_cjfxa")
+laying_item_scene = ExtResource("2_uhwid")
 
 [node name="Queue" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

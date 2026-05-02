@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bcc6yvfwtc7ui"]
+
+[ext_resource type="Texture2D" uid="uid://cujpm2f4wh6tq" path="res://assets/coffee_machine.png" id="1_maag1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3kqe"]
+atlas = ExtResource("1_maag1")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7yy3"]
+atlas = ExtResource("1_maag1")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro8gr"]
+atlas = ExtResource("1_maag1")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpedc"]
+atlas = ExtResource("1_maag1")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rardu"]
+atlas = ExtResource("1_maag1")
+region = Rect2(256, 0, 64, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3kqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7yy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro8gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpedc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rardu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

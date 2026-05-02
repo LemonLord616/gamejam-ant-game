@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b518b0w1lcjsm"]
+[gd_scene load_steps=18 format=4 uid="uid://b518b0w1lcjsm"]
 
 [ext_resource type="Script" uid="uid://3lwqxlpy8g5r" path="res://levels/main.gd" id="1_4fc0e"]
 [ext_resource type="TileSet" uid="uid://cm6r6g5w0x1wb" path="res://levels/resources/main_tile_set.tres" id="1_etqu2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b20bsmnvpv2xv" path="res://objects/big_momma/big_momma.tscn" id="10_jw1n3"]
 [ext_resource type="AudioStream" uid="uid://dolh4gih0ubw" path="res://assets/music/main_theme.wav" id="14_4fc0e"]
 [ext_resource type="PackedScene" uid="uid://bqpgt18tnd3aa" path="res://objects/props/customer/customer_queue.tscn" id="14_6yxbg"]
+[ext_resource type="PackedScene" uid="uid://b0dctrhtjlolp" path="res://objects/props/coffee_machine/coffee_machine.tscn" id="14_21ko3"]
 [ext_resource type="Script" uid="uid://biu7hjwp2uo10" path="res://levels/music.gd" id="15_4fc0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fput"]
@@ -148,6 +149,9 @@ player = NodePath("../Player")
 
 [node name="CustomerQueue" parent="YSort" instance=ExtResource("14_6yxbg")]
 position = Vector2(-64, -528)
+
+[node name="CoffeeMachine" parent="YSort" instance=ExtResource("14_21ko3")]
+position = Vector2(112, -272)
 
 [node name="Borders" type="Node2D" parent="."]
 
