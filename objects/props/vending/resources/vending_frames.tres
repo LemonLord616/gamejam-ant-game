@@ -1,0 +1,65 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://xtc5rridladn"]
+
+[ext_resource type="Texture2D" uid="uid://bsm6raq2nbk2j" path="res://assets/vending.png" id="1_wg0ho"]
+[ext_resource type="Texture2D" uid="uid://cuyuuwf8bhdbu" path="res://assets/Vending/Lavanda seed vending.png" id="2_6dy28"]
+[ext_resource type="Texture2D" uid="uid://o0raiv4tfalr" path="res://assets/Vending/Sea Lavanda seed vending.png" id="3_wndg3"]
+[ext_resource type="Texture2D" uid="uid://dx3bc6rgktjvo" path="res://assets/Vending/Sunny Lavanda seed vending.png" id="4_ijcx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a0gl"]
+atlas = ExtResource("1_wg0ho")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlanu"]
+atlas = ExtResource("1_wg0ho")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nin2r"]
+atlas = ExtResource("1_wg0ho")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8tp0"]
+atlas = ExtResource("1_wg0ho")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_benuo"]
+atlas = ExtResource("1_wg0ho")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbmvt"]
+atlas = ExtResource("1_wg0ho")
+region = Rect2(160, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a0gl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlanu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nin2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8tp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_benuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbmvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6dy28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wndg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ijcx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

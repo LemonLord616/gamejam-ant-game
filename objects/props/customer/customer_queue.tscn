@@ -8,8 +8,8 @@
 [ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="6_w85dp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w85dp"]
-radius = 30.0
-height = 80.0
+radius = 50.0
+height = 120.0
 
 [node name="CustomerQueue" type="Node2D"]
 script = ExtResource("1_cjfxa")
@@ -18,7 +18,7 @@ script = ExtResource("1_cjfxa")
 unique_name_in_owner = true
 position = Vector2(0, -96)
 sprite_frames = ExtResource("1_h2ok2")
-frame_progress = 0.7037386
+frame_progress = 0.035200447
 speed_scale = 0.3
 
 [node name="Customer" type="AnimatedSprite2D" parent="."]

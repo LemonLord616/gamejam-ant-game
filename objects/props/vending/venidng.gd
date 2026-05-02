@@ -2,7 +2,7 @@ extends StaticBody2D
 class_name Vending
 
 @onready var interactable_area: InteractableArea = %InteractableArea
-@onready var sprite: Sprite2D = %Sprite2D
+@onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @export var dispense_item: AvailaibleItem
 
 enum AvailaibleItem {
@@ -12,6 +12,9 @@ enum AvailaibleItem {
 	LavendSeed,
 	SeaLavendSeed,
 	SunnyLavendSeed,
+	Lavend,
+	SeaLavend,
+	SunnyLavend
 }
 var item_to_res: Dictionary[AvailaibleItem, ItemManager.Item] = {
 	AvailaibleItem.LavendCup      : ItemManager.Item.LavendCup,
@@ -20,6 +23,9 @@ var item_to_res: Dictionary[AvailaibleItem, ItemManager.Item] = {
 	AvailaibleItem.LavendSeed     : ItemManager.Item.LavendSeed,
 	AvailaibleItem.SeaLavendSeed  : ItemManager.Item.SeaLavendSeed,
 	AvailaibleItem.SunnyLavendSeed: ItemManager.Item.SunnyLavendSeed,
+	AvailaibleItem.Lavend         : ItemManager.Item.Lavend,
+	AvailaibleItem.SeaLavend      : ItemManager.Item.SeaLavend,
+	AvailaibleItem.SunnyLavend    : ItemManager.Item.SunnyLavend,
 }
 var item_to_frame: Dictionary[AvailaibleItem, int] = {
 	AvailaibleItem.LavendCup      : 0,
@@ -28,6 +34,9 @@ var item_to_frame: Dictionary[AvailaibleItem, int] = {
 	AvailaibleItem.LavendSeed     : 3,
 	AvailaibleItem.SeaLavendSeed  : 4,
 	AvailaibleItem.SunnyLavendSeed: 5,
+	AvailaibleItem.Lavend         : 6,
+	AvailaibleItem.SeaLavend      : 7,
+	AvailaibleItem.SunnyLavend    : 8,
 }
 
 func _ready() -> void:
