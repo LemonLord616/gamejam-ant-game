@@ -15,17 +15,25 @@ signal exit
 
 @export var player: Player
 @export var debug_raycast: RayCast2D
+@export var stamina: PlayerStamina
 
 @onready var player_id := player.player_id
 @onready var device_id := player.device_id
 @onready var motion_profile := player.motion_profile
 @onready var prefix := "p" + str(player_id) + "_"
 
+var can_run := true
+## meant to disable run if stamina zeroed until press run again
+var run_button_fresh := true
 
 func _ready() -> void:
 	if not enabled:
 		queue_free()
 	_setup_controls()
+	stamina.can_run_change.connect(_on_can_run_change)
+
+func _on_can_run_change(flag: bool) -> void:
+	can_run = flag
 
 func _setup_controls() -> void:
 	pass
@@ -35,12 +43,17 @@ func _input(event: InputEvent) -> void:
 		exit.emit()
 	if event.is_action_pressed(prefix + "interact"):
 		interact.emit()
+	if event.is_action_pressed(prefix + "run"):
+		run_button_fresh = true
 
 func _physics_process(delta: float) -> void:
 	var move_vector := _get_move_vector()
 	var power = motion_profile.power
 	var max_force = motion_profile.max_force
 	var is_running := Input.is_action_pressed(prefix + "run")
+	if not can_run or not run_button_fresh:
+		is_running = false
+		run_button_fresh = false
 	if is_running:
 		power = motion_profile.run_power
 		max_force = motion_profile.max_force

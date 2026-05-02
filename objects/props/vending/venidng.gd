@@ -7,15 +7,27 @@ class_name Vending
 
 enum AvailaibleItem {
 	LavendCup,
-	Seed
+	Seed,
+	RandomSeed,
+	LavendSeed,
+	SeaLavendSeed,
+	SunnyLavendSeed,
 }
 var item_to_res: Dictionary[AvailaibleItem, ItemManager.Item] = {
-	AvailaibleItem.LavendCup: ItemManager.Item.LavendCup,
-	AvailaibleItem.Seed: ItemManager.Item.Seed
+	AvailaibleItem.LavendCup      : ItemManager.Item.LavendCup,
+	AvailaibleItem.Seed           : ItemManager.Item.Seed,
+	AvailaibleItem.RandomSeed     : ItemManager.Item.RandomSeed,
+	AvailaibleItem.LavendSeed     : ItemManager.Item.LavendSeed,
+	AvailaibleItem.SeaLavendSeed  : ItemManager.Item.SeaLavendSeed,
+	AvailaibleItem.SunnyLavendSeed: ItemManager.Item.SunnyLavendSeed,
 }
 var item_to_frame: Dictionary[AvailaibleItem, int] = {
-	AvailaibleItem.LavendCup: 0,
-	AvailaibleItem.Seed: 1
+	AvailaibleItem.LavendCup      : 0,
+	AvailaibleItem.Seed           : 1,
+	AvailaibleItem.RandomSeed     : 2,
+	AvailaibleItem.LavendSeed     : 3,
+	AvailaibleItem.SeaLavendSeed  : 4,
+	AvailaibleItem.SunnyLavendSeed: 5,
 }
 
 func _ready() -> void:

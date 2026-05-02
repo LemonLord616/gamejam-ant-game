@@ -55,15 +55,36 @@ func _on_interact(player: Player) -> void:
 		return
 	if planted and player.has_item():
 		return
-	if player.is_item(ItemManager.Item.Seed):
+	var item := player.get_item()
+	if player.has_item() and item in [
+		ItemManager.Item.LavendSeed,
+		ItemManager.Item.SeaLavendSeed,
+		ItemManager.Item.SunnyLavendSeed,
+		ItemManager.Item.RandomSeed
+	]:
 		player.remove_item()
-		planted = true
-		current_stage = Stage.SMALL
-		current_type = Type.DEFAULT
-		growth_timer = growth_time
+		_plant(item)
+
 	if current_stage == Stage.MATURE:
 		planted = false
-		player.set_item(ItemManager.Item.Lavend)
+		match current_type:
+			Type.DEFAULT: player.set_item(ItemManager.Item.Lavend)
+			Type.SEA:     player.set_item(ItemManager.Item.SeaLavend)
+			Type.SUNNY:   player.set_item(ItemManager.Item.SunnyLavend)
+
+func _plant(item: ItemManager.Item) -> void:
+	planted = true
+	current_stage = Stage.SMALL
+	growth_timer = growth_time
+	match item:
+		ItemManager.Item.RandomSeed:
+			current_type = randi() % Type.size() as Type
+		ItemManager.Item.LavendSeed:
+			current_type = Type.DEFAULT
+		ItemManager.Item.SeaLavendSeed:
+			current_type = Type.SEA
+		ItemManager.Item.SunnyLavendSeed:
+			current_type = Type.SUNNY
 
 func _physics_process(delta: float) -> void:
 	if not planted:

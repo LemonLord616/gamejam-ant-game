@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://efv637r0tyuw"]
+[gd_scene load_steps=16 format=3 uid="uid://efv637r0tyuw"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://ba2oy1f36dw4q" path="res://objects/player/resources/player_default_physic_material.tres" id="1_sglur"]
 [ext_resource type="Script" uid="uid://snyoa81c1xdr" path="res://objects/player/player.gd" id="1_symyc"]
@@ -12,11 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://n42rxromibxm" path="res://assets/old_sprites/shadow_small.png" id="11_c34wb"]
 [ext_resource type="Texture2D" uid="uid://bapd0y207ryds" path="res://assets/old_sprites/select_corner.png" id="11_psowp"]
 [ext_resource type="SpriteFrames" uid="uid://ddfl6141m1nfn" path="res://objects/player/resources/frames_ant_guy.tres" id="12_c34wb"]
+[ext_resource type="Script" uid="uid://cbfv47pk18e03" path="res://objects/player/player_stamina.gd" id="13_c34wb"]
+[ext_resource type="Script" uid="uid://d2thrdgr58hdm" path="res://objects/player/player_health.gd" id="14_45rsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgwla"]
 size = Vector2(40, 40)
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("controller")]
+collision_layer = 35
+collision_mask = 3
 mass = 20.0
 physics_material_override = ExtResource("1_sglur")
 script = ExtResource("1_symyc")
@@ -42,17 +46,19 @@ metadata/_custom_type_script = "uid://bmk1howhfs7r3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionSystem/InteractArea"]
 shape = SubResource("RectangleShape2D_xgwla")
 
-[node name="PlayerGpController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast")]
+[node name="PlayerGpController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast", "stamina")]
 script = ExtResource("8_45urx")
 enabled = false
 player = NodePath("..")
 debug_raycast = NodePath("../Debug")
+stamina = NodePath("../Stamina")
 metadata/_custom_type_script = "uid://b35uu356vm5bk"
 
-[node name="PlayerKbController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast")]
+[node name="PlayerKbController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast", "stamina")]
 script = ExtResource("4_bls4j")
 player = NodePath("..")
 debug_raycast = NodePath("../Debug")
+stamina = NodePath("../Stamina")
 metadata/_custom_type_script = "uid://b0ntspknng4af"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -72,3 +78,13 @@ offset = Vector2(0, -8)
 script = ExtResource("8_26q78")
 player = NodePath("..")
 player_controller = NodePath("../PlayerKbController")
+
+[node name="Stamina" type="Node" parent="." node_paths=PackedStringArray("player_controller", "player")]
+script = ExtResource("13_c34wb")
+player_controller = NodePath("../PlayerKbController")
+player = NodePath("..")
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("14_45rsp")
+player = NodePath("..")

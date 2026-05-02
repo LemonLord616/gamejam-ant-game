@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://d28xi50inr3ew"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_ivsho"]
+[ext_resource type="Texture2D" uid="uid://btnacshpihht4" path="res://assets/Hold items/Sunny Lavanda.png" id="2_cs1ue"]
+
+[resource]
+script = ExtResource("1_ivsho")
+name = &"Sunny Lavend"
+texture = ExtResource("2_cs1ue")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"

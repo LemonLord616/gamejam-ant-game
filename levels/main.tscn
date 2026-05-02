@@ -29,43 +29,48 @@ follow_curve = ExtResource("3_etqu2")
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Sign" parent="YSort" instance=ExtResource("3_l8qe7")]
-position = Vector2(16, -48)
-text = "Let me tell you a story... There once was a little ant"
-
-[node name="Sign2" parent="YSort" instance=ExtResource("3_l8qe7")]
-position = Vector2(-240, 16)
-text = "This is a garden"
-
-[node name="Sign3" parent="YSort" instance=ExtResource("3_l8qe7")]
-position = Vector2(-96, -128)
-text = "His mom was very abusive.
-By the way, this is trash can"
-
-[node name="Sign4" parent="YSort" instance=ExtResource("3_l8qe7")]
-position = Vector2(192, -128)
-text = "She was very fat and she loved Lavend Raph
-
-These are cheater dispensers. You can try take the seed and plant it in garden"
-
-[node name="Sign5" parent="YSort" instance=ExtResource("3_l8qe7")]
-position = Vector2(96, -224)
-text = "This is momma. Feed her"
+[node name="Zabor" type="TileMapLayer" parent="YSort"]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD4/wUAAQABAAIAAAD5/wUAAQABAAIAAAD6/wUAAQABAAIAAAD7/wUAAQABAAIAAAD8/wUAAQABAAIAAAD9/wUAAQABAAIAAAD+/wUAAQABAAIAAAD//wUAAQABAAIAAAAAAAUAAQABAAIAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQABAAIAAAAIAAUAAQACAAIAAAAIAAQAAQACAAEAAAAIAAMAAQACAAEAAAAIAAIAAQACAAEAAAAIAAEAAQACAAEAAAAIAAAAAQACAAEAAAAIAP//AQACAAEAAAAIAP7/AQACAAEAAAAIAP3/AQACAAEAAAAIAPz/AQACAAEAAAAIAPv/AQACAAEAAAAIAPr/AQACAAEAAAAIAPn/AQACAAEAAAAHAPj/AQABAAAAAAAGAPj/AQABAAAAAAAFAPj/AQABAAAAAAAEAPj/AQABAAAAAAADAPj/AQABAAAAAAACAPj/AQABAAAAAAABAPj/AQABAAAAAAAAAPj/AQABAAAAAAD///j/AQABAAAAAAD+//j/AQABAAAAAAD9//j/AQABAAAAAAD8//j/AQABAAAAAAD7//j/AQABAAAAAAD6//j/AQABAAAAAAD5//j/AQABAAAAAAD4//j/AQABAAAAAAD3//n/AQAAAAEAAAD3//r/AQAAAAEAAAD3//v/AQAAAAEAAAD3//z/AQAAAAEAAAD3//3/AQAAAAEAAAD3//7/AQAAAAEAAAD3////AQAAAAEAAAD3/wAAAQAAAAEAAAD3/wEAAQAAAAEAAAD3/wIAAQAAAAEAAAD3/wMAAQAAAAEAAAD3/wQAAQAAAAEAAAD3/wUAAQAAAAIAAAD3//j/AQAAAAAAAAAIAPj/AQACAAAAAAA=")
+tile_set = ExtResource("2_c7dyn")
+rendering_quadrant_size = 1
 
 [node name="Player" parent="YSort" node_paths=PackedStringArray("floating_item") instance=ExtResource("2_wdj6m")]
 position = Vector2(16, -16)
 floating_item = NodePath("../FloatingItem")
 
-[node name="FloatingItem" parent="YSort" node_paths=PackedStringArray("player") instance=ExtResource("4_m1504")]
-player = NodePath("../Player")
-
-[node name="Venidng" parent="YSort" instance=ExtResource("5_ifaiv")]
-position = Vector2(256, -128)
-
 [node name="TrashCan" parent="YSort" instance=ExtResource("6_qy63d")]
 position = Vector2(-64, -128)
 
+[node name="Signs" type="Node2D" parent="YSort"]
+y_sort_enabled = true
+
+[node name="Sign" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(16, -48)
+text = "Let me tell you a story... There once was a little ant"
+
+[node name="Sign2" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(-240, 16)
+text = "This is a garden"
+
+[node name="Sign3" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(-96, -128)
+text = "His mom was very abusive.
+By the way, this is trash can"
+
+[node name="Sign4" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(144, -144)
+text = "She was very fat and she loved Lavend Raph
+
+These are cheater dispensers. You can try take the seed and plant it in garden"
+
+[node name="Sign5" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(96, -224)
+text = "This is momma. Feed her"
+
 [node name="Harvests" type="Node2D" parent="YSort"]
+y_sort_enabled = true
 
 [node name="Harvest5" parent="YSort/Harvests" instance=ExtResource("7_qy63d")]
 position = Vector2(-208, -16)
@@ -91,9 +96,31 @@ position = Vector2(-272, 48)
 [node name="Harvest4" parent="YSort/Harvests" instance=ExtResource("7_qy63d")]
 position = Vector2(-336, 48)
 
-[node name="Venidng2" parent="YSort" instance=ExtResource("5_ifaiv")]
-position = Vector2(224, -128)
+[node name="Vendings" type="Node2D" parent="YSort"]
+y_sort_enabled = true
+
+[node name="Venidng" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
+position = Vector2(176, -144)
+
+[node name="Venidng2" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
+position = Vector2(208, -144)
 dispense_item = 1
+
+[node name="Venidng3" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
+position = Vector2(240, -144)
+dispense_item = 2
+
+[node name="Venidng4" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
+position = Vector2(80, -48)
+dispense_item = 3
+
+[node name="Venidng5" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
+position = Vector2(112, -48)
+dispense_item = 4
+
+[node name="Venidng6" parent="YSort/Vendings" instance=ExtResource("5_ifaiv")]
+position = Vector2(144, -48)
+dispense_item = 5
 
 [node name="BigMomma" parent="YSort" instance=ExtResource("10_jw1n3")]
 position = Vector2(64, -256)
@@ -101,15 +128,11 @@ position = Vector2(64, -256)
 [node name="LavendEnemy" parent="YSort" instance=ExtResource("11_xdh4e")]
 position = Vector2(32, -128)
 
-[node name="Zabor" type="TileMapLayer" parent="YSort"]
-y_sort_enabled = true
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD4/wUAAQABAAIAAAD5/wUAAQABAAIAAAD6/wUAAQABAAIAAAD7/wUAAQABAAIAAAD8/wUAAQABAAIAAAD9/wUAAQABAAIAAAD+/wUAAQABAAIAAAD//wUAAQABAAIAAAAAAAUAAQABAAIAAAABAAUAAQABAAIAAAACAAUAAQABAAIAAAADAAUAAQABAAIAAAAEAAUAAQABAAIAAAAFAAUAAQABAAIAAAAGAAUAAQABAAIAAAAHAAUAAQABAAIAAAAIAAUAAQACAAIAAAAIAAQAAQACAAEAAAAIAAMAAQACAAEAAAAIAAIAAQACAAEAAAAIAAEAAQACAAEAAAAIAAAAAQACAAEAAAAIAP//AQACAAEAAAAIAP7/AQACAAEAAAAIAP3/AQACAAEAAAAIAPz/AQACAAEAAAAIAPv/AQACAAEAAAAIAPr/AQACAAEAAAAIAPn/AQACAAEAAAAHAPj/AQABAAAAAAAGAPj/AQABAAAAAAAFAPj/AQABAAAAAAAEAPj/AQABAAAAAAADAPj/AQABAAAAAAACAPj/AQABAAAAAAABAPj/AQABAAAAAAAAAPj/AQABAAAAAAD///j/AQABAAAAAAD+//j/AQABAAAAAAD9//j/AQABAAAAAAD8//j/AQABAAAAAAD7//j/AQABAAAAAAD6//j/AQABAAAAAAD5//j/AQABAAAAAAD4//j/AQABAAAAAAD3//n/AQAAAAEAAAD3//r/AQAAAAEAAAD3//v/AQAAAAEAAAD3//z/AQAAAAEAAAD3//3/AQAAAAEAAAD3//7/AQAAAAEAAAD3////AQAAAAEAAAD3/wAAAQAAAAEAAAD3/wEAAQAAAAEAAAD3/wIAAQAAAAEAAAD3/wMAAQAAAAEAAAD3/wQAAQAAAAEAAAD3/wUAAQAAAAIAAAD3//j/AQAAAAAAAAAIAPj/AQACAAAAAAA=")
-tile_set = ExtResource("2_c7dyn")
-rendering_quadrant_size = 1
-
 [node name="SeaLavendEnemy" parent="YSort" instance=ExtResource("13_6yxbg")]
 position = Vector2(-48, -80)
 
 [node name="SunnyLavendEnemy" parent="YSort" instance=ExtResource("14_4fc0e")]
-position = Vector2(112, -48)
+position = Vector2(112, 16)
+
+[node name="FloatingItem" parent="YSort" node_paths=PackedStringArray("player") instance=ExtResource("4_m1504")]
+player = NodePath("../Player")

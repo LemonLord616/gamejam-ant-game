@@ -13,6 +13,11 @@ signal item_discarded
 @export var controller: PlayerController
 @export var floating_item: FloatingItem
 
+@export_range(2.0, 20.0, 0.5, "sec") var run_full_duration := 5.0
+@export var max_health := 10
+
+@onready var health_component: PlayerHealth = %Health
+
 var current_item_idx: ItemManager.Item
 var current_item: ItemResource
 
@@ -20,7 +25,6 @@ func _ready() -> void:
 	lock_rotation = true
 	gravity_scale = 0.0
 	controller.exit.connect(_on_exit)
-	set_item.call_deferred(ItemManager.Item.SeaLavend)
 
 func _on_exit() -> void:
 	ui.hide_text()
@@ -33,8 +37,8 @@ func is_item(item_idx: ItemManager.Item) -> bool:
 func has_item() -> bool:
 	return current_item != null
 
-func get_item() -> ItemResource:
-	return current_item
+func get_item() -> ItemManager.Item:
+	return current_item_idx
 
 func set_item(item_idx: ItemManager.Item) -> void:
 	current_item_idx = item_idx
@@ -44,8 +48,15 @@ func set_item(item_idx: ItemManager.Item) -> void:
 
 func remove_item() -> void:
 	current_item = null
+	current_item_idx = -1
 	item_changed.emit(null)
 	item_discarded.emit()
+
+func get_damage(amount: int) -> void:
+	health_component.reduce_health(amount)
+
+func recover_health(amount: int) -> void:
+	health_component.recover_health(amount)
 
 func _physics_process(delta: float) -> void:
 	apply_force(-motion_profile.damp * linear_velocity)

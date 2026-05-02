@@ -7,7 +7,7 @@
 [ext_resource type="Shape2D" uid="uid://p7kwppriccqh" path="res://objects/enemies/resources/big_enemy_collision_shape.tres" id="4_l3qm6"]
 
 [node name="SeaLavendEnemy" type="RigidBody2D"]
-mass = 15.0
+mass = 200.0
 script = ExtResource("1_8yu72")
 motion_profile = ExtResource("2_l3qm6")
 metadata/_custom_type_script = "uid://dkh3jaaybgbdk"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://cpug6k04e5hod"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_0q1t8"]
+[ext_resource type="Texture2D" uid="uid://bpilqlbpk5mxa" path="res://assets/seeds.png" id="2_yy60j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_susys"]
+atlas = ExtResource("2_yy60j")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_0q1t8")
+name = &"Random Seed"
+texture = SubResource("AtlasTexture_susys")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"
