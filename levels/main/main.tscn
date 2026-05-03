@@ -276,7 +276,7 @@ autoplay = true
 script = ExtResource("15_4fc0e")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="AudioStreamPlayer"]
-modulate = Color(0.30213058, 0.05719915, 0.5285866, 1)
+modulate = Color(0.44019064, 0.114827566, 0.75253695, 1)
 amount = 75
 texture = ExtResource("23_uj5r8")
 lifetime = 7.0
