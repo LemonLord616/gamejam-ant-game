@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CoffeeRecipeResource" load_steps=2 format=3 uid="uid://do1nr3d33olrl"]
+
+[ext_resource type="Script" uid="uid://cq07ygjxjyj0t" path="res://objects/props/coffee_machine/resources/coffee_recipe.gd" id="1_h7wry"]
+
+[resource]
+script = ExtResource("1_h7wry")
+ingredients = Array[int]([9, 9])
+result = 1
+metadata/_custom_type_script = "uid://cq07ygjxjyj0t"

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=4 uid="uid://bc64oinx3i11w"]
+
+[ext_resource type="TileSet" uid="uid://b8l2pbbbeoq5o" path="res://objects/props/resources/guide_wall_tile_set.tres" id="1_k33cm"]
+[ext_resource type="Texture2D" uid="uid://j6ubiolukcj6" path="res://objects/props/resources/coin_outline.tres" id="2_crv6b"]
+[ext_resource type="Texture2D" uid="uid://x3ipcbnnq8n8" path="res://objects/props/resources/coffee_outline.tres" id="3_gg1y3"]
+[ext_resource type="Texture2D" uid="uid://b4auywfdrqkke" path="res://objects/props/resources/arrow_outline.tres" id="4_g03te"]
+[ext_resource type="Texture2D" uid="uid://bwec7g1ftwf2q" path="res://assets/Coffee/Multi Lavend coffee.png" id="5_41gh1"]
+[ext_resource type="Texture2D" uid="uid://cneicyolbyfq8" path="res://assets/Hold items/Coin.png" id="6_2l4o6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k33cm"]
+height = 96.0
+
+[node name="CustomerGuide" type="StaticBody2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(16, 0)
+tile_map_data = PackedByteArray("AAAAAP//AQACAAAAAAD/////AQABAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAIAAAD//wAAAQABAAIAAAAAAAAAAQACAAIAAAA=")
+tile_set = ExtResource("1_k33cm")
+
+[node name="Outlines" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Outlines"]
+position = Vector2(29, -2)
+texture = ExtResource("2_crv6b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Outlines"]
+position = Vector2(-28, -4)
+texture = ExtResource("3_gg1y3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Outlines"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_g03te")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Items"]
+position = Vector2(-27, -3)
+texture = ExtResource("5_41gh1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Items"]
+position = Vector2(30, -1)
+texture = ExtResource("6_2l4o6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_k33cm")

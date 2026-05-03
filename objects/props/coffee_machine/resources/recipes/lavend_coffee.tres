@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_m5ji7")
-ingredients = Array[int]([6, 7, 8])
+ingredients = Array[int]([8, 8])
 metadata/_custom_type_script = "uid://cq07ygjxjyj0t"

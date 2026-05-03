@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ui="*res://global/ui/ui.tscn"
 item_manager="*res://global/item_manager.gd"
 input_manager="*res://global/input_manager.gd"
+global_clock="*res://global/clock.gd"
 
 [display]
 

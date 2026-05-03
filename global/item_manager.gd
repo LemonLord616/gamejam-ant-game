@@ -3,6 +3,8 @@ class_name ItemManager
 
 enum Item {
 	LavendCup,
+	SeaLavendCup,
+	SunnyLavendCup,
 	Seed,
 	RandomSeed,
 	LavendSeed,
@@ -16,6 +18,8 @@ enum Item {
 
 static var item_resources: Dictionary[Item, ItemResource] = {
 	Item.LavendCup: preload("res://items/lavend_cup.tres") as ItemResource,
+	Item.SeaLavendCup: preload("res://items/sea_lavend_cup.tres") as ItemResource,
+	Item.SunnyLavendCup: preload("res://items/sunny_lavend_cup.tres") as ItemResource,
 	Item.Seed: preload("res://items/seed.tres") as ItemResource,
 	Item.RandomSeed: preload("res://items/random_seed.tres") as ItemResource,
 	Item.LavendSeed: preload("res://items/lavend_seed.tres") as ItemResource,

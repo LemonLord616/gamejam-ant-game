@@ -5,6 +5,8 @@ class_name CustomerQueue
 @export var laying_item_scene: PackedScene
 @export_range(0.0, 1000.0, 0.1) var dispense_impulse := 100.0
 
+@export var coffee_time_curve: Curve
+
 @onready var interactable_area: InteractableArea = %InteractableArea
 @onready var customer_sprite: AnimatedSprite2D = %Customer
 @onready var queue_sprite: AnimatedSprite2D = %Queue
@@ -13,7 +15,7 @@ class_name CustomerQueue
 enum Customer {
 	PUNK, RICH, KACHOK, CHEF, SKATER
 }
-enum LavendTypes {
+enum CoffeeTypes {
 	DEFAULT, SEA, SUNNY
 }
 @export var customer := Customer.PUNK : set = _set_customer
@@ -25,10 +27,10 @@ func _set_customer(new_customer: Customer) -> void:
 ## required_items mask, track which are done
 var items_done: Array[bool] = []
 
-var lavend_type_to_res: Dictionary[LavendTypes, ItemManager.Item] = {
-	LavendTypes.DEFAULT: ItemManager.Item.Lavend,
-	LavendTypes.SEA    : ItemManager.Item.SeaLavend,
-	LavendTypes.SUNNY  : ItemManager.Item.SunnyLavend,
+var coffee_to_item: Dictionary[CoffeeTypes, ItemManager.Item] = {
+	CoffeeTypes.DEFAULT: ItemManager.Item.LavendCup,
+	CoffeeTypes.SEA    : ItemManager.Item.SeaLavendCup,
+	CoffeeTypes.SUNNY  : ItemManager.Item.SunnyLavendCup,
 }
 
 func _ready() -> void:
@@ -38,8 +40,8 @@ func _ready() -> void:
 	customer_sprite.speed_scale = 0.0
 	customer_sprite.play("default")
 	_randomize_customer()
-	# _randomize_required_items(3)
-	_require_coffee(1)
+	_randomize_required_items(1)
+	#_require_coffee(1)
 	print(required_items)
 	print(items_done)
 
@@ -84,8 +86,10 @@ func _check_task_done() -> void:
 func _task_done() -> void:
 	_dispense_item(ItemManager.Item.Coin)
 	_randomize_customer()
-	#_randomize_required_items(3)
-	_require_coffee(1)
+	_randomize_required_items(
+		max(1, int( coffee_time_curve.sample(global_clock.timer) ))
+	)
+	#_require_coffee(1)
 
 func _randomize_required_items(amount: int) -> void:
 	items_done.resize(amount)
@@ -93,8 +97,8 @@ func _randomize_required_items(amount: int) -> void:
 	required_items = []
 	for i in range(amount):
 		required_items.append(
-			lavend_type_to_res[
-				randi() % LavendTypes.size() as LavendTypes
+			coffee_to_item[
+				randi() % CoffeeTypes.size() as CoffeeTypes
 			]
 		)
 	item_visuals.create_item_sprites(required_items)

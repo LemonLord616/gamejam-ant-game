@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dpkq6rcx1xuh8"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_ka3l8"]
+[ext_resource type="Texture2D" uid="uid://dao54bsrno25v" path="res://assets/Coffee/Sea Lavend Coffee.png" id="2_ka3l8"]
+
+[resource]
+script = ExtResource("1_ka3l8")
+name = &"Sea Lavend Coffee"
+texture = ExtResource("2_ka3l8")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"

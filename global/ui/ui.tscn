@@ -177,6 +177,33 @@ layout_mode = 2
 text = "Drop Item"
 label_settings = SubResource("LabelSettings_vkava")
 
+[node name="TimerPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(40, 16)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="TimerLabel" type="Label" parent="TimerPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -8.0
+offset_right = 18.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_wl5ax")
+text = "4:20"
+
 [node name="Text" type="Panel" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 300)

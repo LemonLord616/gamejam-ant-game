@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0dctrhtjlolp"]
+[gd_scene load_steps=14 format=3 uid="uid://b0dctrhtjlolp"]
 
 [ext_resource type="SpriteFrames" uid="uid://bcc6yvfwtc7ui" path="res://objects/props/coffee_machine/resources/coffee_machine_frames.tres" id="1_2homw"]
 [ext_resource type="Script" uid="uid://ccamo73frpu8w" path="res://objects/props/coffee_machine/coffee_machine.gd" id="1_m2vi7"]
@@ -8,7 +8,9 @@
 [ext_resource type="Script" uid="uid://cq07ygjxjyj0t" path="res://objects/props/coffee_machine/resources/coffee_recipe.gd" id="3_plptf"]
 [ext_resource type="Resource" uid="uid://dl1kmji76fanh" path="res://objects/props/coffee_machine/resources/recipes/lavend_coffee.tres" id="4_5s6kh"]
 [ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="4_ky74r"]
+[ext_resource type="Resource" uid="uid://do1nr3d33olrl" path="res://objects/props/coffee_machine/resources/recipes/sea_lavend_coffee.tres" id="5_2uixr"]
 [ext_resource type="Texture2D" uid="uid://0wqupxgkx8kg" path="res://assets/old_sprites/shadow_big.png" id="5_plptf"]
+[ext_resource type="Resource" uid="uid://qm447c1j2pmq" path="res://objects/props/coffee_machine/resources/recipes/sunny_lavend_coffee.tres" id="6_6tdqr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jy77j"]
 radius = 50.0
@@ -21,7 +23,7 @@ height = 56.0
 [node name="CoffeeMachine" type="StaticBody2D"]
 script = ExtResource("1_m2vi7")
 laying_item_scene = ExtResource("2_pog67")
-recipes = Array[ExtResource("3_plptf")]([ExtResource("4_5s6kh")])
+recipes = Array[ExtResource("3_plptf")]([ExtResource("4_5s6kh"), ExtResource("5_2uixr"), ExtResource("6_6tdqr")])
 
 [node name="Shadow" type="Sprite2D" parent="."]
 texture = ExtResource("5_plptf")

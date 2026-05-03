@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cp332qe4ell6u"]
 
 [ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_olksd"]
-[ext_resource type="Texture2D" uid="uid://74acrgh2btkt" path="res://assets/old_sprites/lavend_cup.png" id="2_1pgw0"]
+[ext_resource type="Texture2D" uid="uid://bmmgmn1qk5bxg" path="res://assets/Coffee/Lavend Coffee.png" id="2_1pgw0"]
 
 [resource]
 script = ExtResource("1_olksd")
-name = &"Lavend Cup"
+name = &"Lavend Coffee"
 texture = ExtResource("2_1pgw0")
 metadata/_custom_type_script = "uid://bkfskg0ogevwp"

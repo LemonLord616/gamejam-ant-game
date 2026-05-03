@@ -1,3 +1,133 @@
-[gd_scene format=3 uid="uid://ddudbs805nxcs"]
+[gd_scene load_steps=15 format=4 uid="uid://ddudbs805nxcs"]
+
+[ext_resource type="TileSet" uid="uid://b8l2pbbbeoq5o" path="res://objects/props/resources/guide_wall_tile_set.tres" id="1_8qe0j"]
+[ext_resource type="Texture2D" uid="uid://de6ibgq83swst" path="res://objects/props/resources/plus_outline.tres" id="2_hoxai"]
+[ext_resource type="Texture2D" uid="uid://cktp4xivps3we" path="res://assets/Hold items/Lavanda.png" id="2_mvshp"]
+[ext_resource type="Texture2D" uid="uid://cscwbf6fdcxgr" path="res://objects/props/resources/lavend_outline.tres" id="2_n30qt"]
+[ext_resource type="Texture2D" uid="uid://be7mw53ic7qei" path="res://assets/Hold items/Sea Lavanda.png" id="3_hoxai"]
+[ext_resource type="Texture2D" uid="uid://bm8s1oyuvlaxg" path="res://objects/props/resources/sea_lavend_outline.tres" id="3_oqal7"]
+[ext_resource type="Texture2D" uid="uid://btnacshpihht4" path="res://assets/Hold items/Sunny Lavanda.png" id="4_balq2"]
+[ext_resource type="Texture2D" uid="uid://b675pdfch2xui" path="res://objects/props/resources/sunny_lavend_outline.tres" id="4_ovuby"]
+[ext_resource type="Texture2D" uid="uid://x3ipcbnnq8n8" path="res://objects/props/resources/coffee_outline.tres" id="5_1v5kb"]
+[ext_resource type="Texture2D" uid="uid://b3ng7h5l54ymm" path="res://objects/props/resources/equal_outline.tres" id="6_balq2"]
+[ext_resource type="Texture2D" uid="uid://bmmgmn1qk5bxg" path="res://assets/Coffee/Lavend Coffee.png" id="10_wqbil"]
+[ext_resource type="Texture2D" uid="uid://dao54bsrno25v" path="res://assets/Coffee/Sea Lavend Coffee.png" id="11_mnl8i"]
+[ext_resource type="Texture2D" uid="uid://b5qtmdvabsle8" path="res://assets/Coffee/Sunny Lavend Coffee.png" id="12_mnl8i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qe0j"]
+height = 128.0
 
 [node name="CoffeeGuide" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8qe0j")
+
+[node name="Wall" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+//3/AQAAAAAAAAD///3/AQABAAAAAAAAAP3/AQABAAAAAAABAP3/AQACAAAAAAABAP7/AQACAAEAAAABAP//AQACAAEAAAD+//7/AQAAAAEAAAD+////AQAAAAEAAAD+/wAAAQAAAAIAAAD//wAAAQABAAIAAAAAAAAAAQABAAIAAAABAAAAAQACAAIAAAD///7/AQABAAEAAAD/////AQABAAEAAAAAAP//AQABAAEAAAAAAP7/AQABAAEAAAA=")
+tile_set = ExtResource("1_8qe0j")
+
+[node name="Outlines" type="Node2D" parent="."]
+
+[node name="LavendOutline" type="Sprite2D" parent="Outlines"]
+position = Vector2(-49, -73)
+texture = ExtResource("2_n30qt")
+
+[node name="LavendOutline2" type="Sprite2D" parent="Outlines"]
+position = Vector2(-17, -73)
+texture = ExtResource("2_n30qt")
+
+[node name="SeaLavendOutline" type="Sprite2D" parent="Outlines"]
+position = Vector2(-49, -41)
+texture = ExtResource("3_oqal7")
+
+[node name="SeaLavendOutline2" type="Sprite2D" parent="Outlines"]
+position = Vector2(-17, -41)
+texture = ExtResource("3_oqal7")
+
+[node name="SunnyLavendOutlin" type="Sprite2D" parent="Outlines"]
+position = Vector2(-49, -9)
+texture = ExtResource("4_ovuby")
+
+[node name="SunnyLavendOutlin2" type="Sprite2D" parent="Outlines"]
+position = Vector2(-17, -9)
+texture = ExtResource("4_ovuby")
+
+[node name="CoffeeOutline" type="Sprite2D" parent="Outlines"]
+position = Vector2(23, -73)
+texture = ExtResource("5_1v5kb")
+
+[node name="CoffeeOutline2" type="Sprite2D" parent="Outlines"]
+position = Vector2(23, -41)
+texture = ExtResource("5_1v5kb")
+
+[node name="CoffeeOutline3" type="Sprite2D" parent="Outlines"]
+position = Vector2(23, -9)
+texture = ExtResource("5_1v5kb")
+
+[node name="Lavneds" type="Node2D" parent="."]
+
+[node name="Lavend" type="Sprite2D" parent="Lavneds"]
+position = Vector2(-48, -72)
+texture = ExtResource("2_mvshp")
+
+[node name="Lavend2" type="Sprite2D" parent="Lavneds"]
+position = Vector2(-16, -72)
+texture = ExtResource("2_mvshp")
+
+[node name="SeaLavend" type="Sprite2D" parent="Lavneds"]
+position = Vector2(-48, -40)
+texture = ExtResource("3_hoxai")
+
+[node name="SeaLavend2" type="Sprite2D" parent="Lavneds"]
+position = Vector2(-16, -40)
+texture = ExtResource("3_hoxai")
+
+[node name="SunnyLavend" type="Sprite2D" parent="Lavneds"]
+position = Vector2(-48, -8)
+texture = ExtResource("4_balq2")
+
+[node name="SunnyLavend2" type="Sprite2D" parent="Lavneds"]
+position = Vector2(-16, -8)
+texture = ExtResource("4_balq2")
+
+[node name="Signs" type="Node2D" parent="."]
+
+[node name="Equal" type="Sprite2D" parent="Signs"]
+position = Vector2(0, -72)
+texture = ExtResource("6_balq2")
+
+[node name="Equal2" type="Sprite2D" parent="Signs"]
+position = Vector2(0, -40)
+texture = ExtResource("6_balq2")
+
+[node name="Equal3" type="Sprite2D" parent="Signs"]
+position = Vector2(0, -8)
+texture = ExtResource("6_balq2")
+
+[node name="Plus" type="Sprite2D" parent="Signs"]
+position = Vector2(-32, -72)
+texture = ExtResource("2_hoxai")
+
+[node name="Plus2" type="Sprite2D" parent="Signs"]
+position = Vector2(-32, -40)
+texture = ExtResource("2_hoxai")
+
+[node name="Plus3" type="Sprite2D" parent="Signs"]
+position = Vector2(-32, -8)
+texture = ExtResource("2_hoxai")
+
+[node name="Coffee" type="Node2D" parent="."]
+
+[node name="LavendCoffee" type="Sprite2D" parent="Coffee"]
+position = Vector2(24, -72)
+texture = ExtResource("10_wqbil")
+
+[node name="SeaLavendCoffee" type="Sprite2D" parent="Coffee"]
+position = Vector2(24, -40)
+texture = ExtResource("11_mnl8i")
+
+[node name="SunnyLavendCoffee" type="Sprite2D" parent="Coffee"]
+position = Vector2(24, -8)
+texture = ExtResource("12_mnl8i")
