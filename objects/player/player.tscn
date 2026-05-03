@@ -21,7 +21,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgwla"]
 size = Vector2(40, 40)
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("controller")]
+[node name="Player" type="RigidBody2D"]
 collision_layer = 35
 collision_mask = 3
 mass = 20.0
@@ -29,7 +29,6 @@ physics_material_override = ExtResource("1_sglur")
 script = ExtResource("1_symyc")
 motion_profile = ExtResource("5_fkugw")
 energy_motion_profile = ExtResource("4_dthqj")
-controller = NodePath("PlayerKbController")
 laying_item_scene = ExtResource("4_x5bgp")
 
 [node name="PositionTracker" type="Node2D" parent="."]
@@ -45,6 +44,7 @@ sel_corner = ExtResource("11_psowp")
 metadata/_custom_type_script = "uid://c52la7qvjqvx"
 
 [node name="InteractArea" type="Area2D" parent="SelectionSystem" node_paths=PackedStringArray("player", "player_controller")]
+unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 64
 script = ExtResource("9_xgwla")
@@ -56,14 +56,15 @@ metadata/_custom_type_script = "uid://bmk1howhfs7r3"
 shape = SubResource("RectangleShape2D_xgwla")
 
 [node name="PlayerGpController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast", "stamina")]
+unique_name_in_owner = true
 script = ExtResource("8_45urx")
-enabled = false
 player = NodePath("..")
 debug_raycast = NodePath("../Debug")
 stamina = NodePath("../Stamina")
 metadata/_custom_type_script = "uid://b35uu356vm5bk"
 
 [node name="PlayerKbController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast", "stamina")]
+unique_name_in_owner = true
 script = ExtResource("4_bls4j")
 player = NodePath("..")
 debug_raycast = NodePath("../Debug")

@@ -13,3 +13,9 @@ func _on_play_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_option_button_item_selected(index: int) -> void:
+	var device = GlobalDevice.Device.KEYBOARD
+	if index == 1:
+		device = GlobalDevice.Device.GAMEPAD
+	GlobalDevice.selected_device = device

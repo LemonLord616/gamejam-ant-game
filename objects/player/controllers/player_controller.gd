@@ -12,8 +12,6 @@ signal interact
 signal exit
 signal drop
 
-@export var enabled := true
-
 @export var player: Player
 @export var debug_raycast: RayCast2D
 @export var stamina: PlayerStamina
@@ -28,8 +26,6 @@ var can_run := true
 var run_button_fresh := true
 
 func _ready() -> void:
-	if not enabled:
-		queue_free()
 	_setup_controls()
 	stamina.can_run_change.connect(_on_can_run_change)
 
