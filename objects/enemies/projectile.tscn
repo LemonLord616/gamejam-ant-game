@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://j27loq4yeydj"]
+
+[ext_resource type="Script" uid="uid://ckqwclcqi3fhy" path="res://objects/enemies/projectile.gd" id="1_aw6ep"]
+[ext_resource type="Texture2D" uid="uid://df4naabxnh068" path="res://assets/sun_projectile.png" id="2_lckwl"]
+[ext_resource type="Shape2D" uid="uid://cxwemw625b76g" path="res://objects/enemies/resources/projectile_collision_shape.tres" id="3_lckwl"]
+[ext_resource type="Script" uid="uid://hvtdpo1f51w" path="res://objects/enemies/attack_area.gd" id="3_m5w85"]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_aw6ep")
+speed = 160.0
+scale_tween_duration = 0.6
+lifetime = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_lckwl")
+
+[node name="AttackArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_m5w85")
+metadata/_custom_type_script = "uid://hvtdpo1f51w"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = ExtResource("3_lckwl")

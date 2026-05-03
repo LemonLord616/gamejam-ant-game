@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://xtc5rridladn" path="res://objects/props/vending/resources/vending_frames.tres" id="4_r848m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ps54x"]
-radius = 4.0
+radius = 8.0
 height = 24.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxfpu"]
