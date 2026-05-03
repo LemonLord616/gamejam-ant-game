@@ -31,103 +31,103 @@ tile_set = ExtResource("1_8qe0j")
 [node name="Outlines" type="Node2D" parent="."]
 
 [node name="LavendOutline" type="Sprite2D" parent="Outlines"]
-position = Vector2(-49, -73)
+position = Vector2(-37, -67)
 texture = ExtResource("2_n30qt")
 
 [node name="LavendOutline2" type="Sprite2D" parent="Outlines"]
-position = Vector2(-17, -73)
+position = Vector2(-5, -67)
 texture = ExtResource("2_n30qt")
 
 [node name="SeaLavendOutline" type="Sprite2D" parent="Outlines"]
-position = Vector2(-49, -41)
+position = Vector2(-37, -35)
 texture = ExtResource("3_oqal7")
 
 [node name="SeaLavendOutline2" type="Sprite2D" parent="Outlines"]
-position = Vector2(-17, -41)
+position = Vector2(-5, -35)
 texture = ExtResource("3_oqal7")
 
 [node name="SunnyLavendOutlin" type="Sprite2D" parent="Outlines"]
-position = Vector2(-49, -9)
+position = Vector2(-37, -3)
 texture = ExtResource("4_ovuby")
 
 [node name="SunnyLavendOutlin2" type="Sprite2D" parent="Outlines"]
-position = Vector2(-17, -9)
+position = Vector2(-5, -3)
 texture = ExtResource("4_ovuby")
 
 [node name="CoffeeOutline" type="Sprite2D" parent="Outlines"]
-position = Vector2(23, -73)
+position = Vector2(35, -67)
 texture = ExtResource("5_1v5kb")
 
 [node name="CoffeeOutline2" type="Sprite2D" parent="Outlines"]
-position = Vector2(23, -41)
+position = Vector2(35, -35)
 texture = ExtResource("5_1v5kb")
 
 [node name="CoffeeOutline3" type="Sprite2D" parent="Outlines"]
-position = Vector2(23, -9)
+position = Vector2(35, -3)
 texture = ExtResource("5_1v5kb")
 
 [node name="Lavneds" type="Node2D" parent="."]
 
 [node name="Lavend" type="Sprite2D" parent="Lavneds"]
-position = Vector2(-48, -72)
+position = Vector2(-36, -66)
 texture = ExtResource("2_mvshp")
 
 [node name="Lavend2" type="Sprite2D" parent="Lavneds"]
-position = Vector2(-16, -72)
+position = Vector2(-4, -66)
 texture = ExtResource("2_mvshp")
 
 [node name="SeaLavend" type="Sprite2D" parent="Lavneds"]
-position = Vector2(-48, -40)
+position = Vector2(-36, -34)
 texture = ExtResource("3_hoxai")
 
 [node name="SeaLavend2" type="Sprite2D" parent="Lavneds"]
-position = Vector2(-16, -40)
+position = Vector2(-4, -34)
 texture = ExtResource("3_hoxai")
 
 [node name="SunnyLavend" type="Sprite2D" parent="Lavneds"]
-position = Vector2(-48, -8)
+position = Vector2(-36, -2)
 texture = ExtResource("4_balq2")
 
 [node name="SunnyLavend2" type="Sprite2D" parent="Lavneds"]
-position = Vector2(-16, -8)
+position = Vector2(-4, -2)
 texture = ExtResource("4_balq2")
 
 [node name="Signs" type="Node2D" parent="."]
 
 [node name="Equal" type="Sprite2D" parent="Signs"]
-position = Vector2(0, -72)
+position = Vector2(12, -66)
 texture = ExtResource("6_balq2")
 
 [node name="Equal2" type="Sprite2D" parent="Signs"]
-position = Vector2(0, -40)
+position = Vector2(12, -34)
 texture = ExtResource("6_balq2")
 
 [node name="Equal3" type="Sprite2D" parent="Signs"]
-position = Vector2(0, -8)
+position = Vector2(12, -2)
 texture = ExtResource("6_balq2")
 
 [node name="Plus" type="Sprite2D" parent="Signs"]
-position = Vector2(-32, -72)
+position = Vector2(-20, -66)
 texture = ExtResource("2_hoxai")
 
 [node name="Plus2" type="Sprite2D" parent="Signs"]
-position = Vector2(-32, -40)
+position = Vector2(-20, -34)
 texture = ExtResource("2_hoxai")
 
 [node name="Plus3" type="Sprite2D" parent="Signs"]
-position = Vector2(-32, -8)
+position = Vector2(-20, -2)
 texture = ExtResource("2_hoxai")
 
 [node name="Coffee" type="Node2D" parent="."]
 
 [node name="LavendCoffee" type="Sprite2D" parent="Coffee"]
-position = Vector2(24, -72)
+position = Vector2(36, -66)
 texture = ExtResource("10_wqbil")
 
 [node name="SeaLavendCoffee" type="Sprite2D" parent="Coffee"]
-position = Vector2(24, -40)
+position = Vector2(36, -34)
 texture = ExtResource("11_mnl8i")
 
 [node name="SunnyLavendCoffee" type="Sprite2D" parent="Coffee"]
-position = Vector2(24, -8)
+position = Vector2(36, -2)
 texture = ExtResource("12_mnl8i")

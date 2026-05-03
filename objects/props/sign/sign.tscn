@@ -1,26 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbxrtp1q7pwxm"]
+[gd_scene load_steps=6 format=3 uid="uid://dbxrtp1q7pwxm"]
 
 [ext_resource type="Texture2D" uid="uid://n42rxromibxm" path="res://assets/old_sprites/shadow_small.png" id="1_8u078"]
 [ext_resource type="Script" uid="uid://bgmf44b44ywui" path="res://objects/props/sign/sign.gd" id="1_52syl"]
 [ext_resource type="Texture2D" uid="uid://yphalv7w43ca" path="res://assets/old_sprites/sign.png" id="2_l3wih"]
 [ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="3_l3wih"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u078"]
-radius = 4.0
-height = 16.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3wih"]
 radius = 16.0
 height = 64.0
 
-[node name="Sign" type="StaticBody2D"]
+[node name="Sign" type="Node2D"]
 script = ExtResource("1_52syl")
 text = "Lorem Ipsum"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 14)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_8u078")
 
 [node name="InteractableArea" type="Area2D" parent="."]
 unique_name_in_owner = true

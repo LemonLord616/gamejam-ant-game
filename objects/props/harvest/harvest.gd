@@ -13,15 +13,20 @@ enum Type {
 	DEFAULT, SEA, SUNNY
 }
 
-@export_range(1.0, 15.0, 0.5, "sec") var growth_time := 7.0
+@export_range(1.0, 60.0, 0.5, "sec") var default_growth_time := 15.0
+@export_range(1.0, 60.0, 0.5, "sec") var sea_growth_time     := 20.0
+@export_range(1.0, 60.0, 0.5, "sec") var sunny_growth_time   := 25.0
+
+var growth_time  := 60.0
 var growth_timer := 0.0
+
+@export var spawn_chance_time_curve: Curve
 
 @export var planted := false : set = _set_planted
 @export var current_stage := Stage.SMALL : set = _set_harvest_stage
 @export var current_type := Type.DEFAULT : set = _set_harvest_type
 
 @export var monsters: Dictionary[Type, PackedScene]
-@export_range(0.0, 1.0, 0.01) var monster_change = 0.5
 
 func _set_planted(new_planted: bool) -> void:
 	planted = new_planted
@@ -43,7 +48,7 @@ func _set_harvest_stage(new_stage: Stage) -> void:
 		Stage.MATURE: harvest_sprite.frame = 2
 	
 	if current_stage == Stage.MATURE:
-		if randf() <= monster_change:
+		if randf() <= spawn_chance_time_curve.sample(global_clock.timer):
 			_spawn_monster()
 			planted = false
 
@@ -87,7 +92,6 @@ func _on_interact(player: Player) -> void:
 func _plant(item: ItemManager.Item) -> void:
 	planted = true
 	current_stage = Stage.SMALL
-	growth_timer = growth_time
 	match item:
 		ItemManager.Item.RandomSeed:
 			current_type = randi() % Type.size() as Type
@@ -97,6 +101,14 @@ func _plant(item: ItemManager.Item) -> void:
 			current_type = Type.SEA
 		ItemManager.Item.SunnyLavendSeed:
 			current_type = Type.SUNNY
+	match current_type:
+		Type.DEFAULT: growth_time = default_growth_time
+		Type.SEA:     growth_time = sea_growth_time
+		Type.SUNNY:   growth_time = sunny_growth_time
+	growth_timer = growth_time
+	progress_bar.value = growth_time
+	progress_bar.max_value = growth_time
+
 
 func _physics_process(delta: float) -> void:
 	if not planted:
