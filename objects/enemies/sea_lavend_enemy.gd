@@ -40,6 +40,11 @@ func _physics_process(delta: float) -> void:
 	if (obstacle_raycast.is_colliding()):
 		_reset_target_timer()
 	_previous_position = global_position
+	
+	if linear_velocity.x < -0.1:
+		animated_sprite.flip_h = true 
+	elif linear_velocity.x > 0.1:
+		animated_sprite.flip_h = false
 
 
 func _move_to_target(delta: float) -> void:

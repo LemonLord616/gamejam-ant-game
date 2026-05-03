@@ -22,6 +22,11 @@ func _physics_process(delta: float) -> void:
 	if (obstacle_raycast.is_colliding()):
 		_direction_change_timer = 0.0
 	
+	if linear_velocity.x < -0.1:
+		animated_sprite.flip_h = true 
+	elif linear_velocity.x > 0.1:
+		animated_sprite.flip_h = false
+	
 	
 func _handle_direction_timer(delta: float) -> void:
 	_direction_change_timer -= delta
