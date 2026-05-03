@@ -14,6 +14,7 @@ enum Item {
 	SeaLavend,
 	SunnyLavend,
 	Coin,
+	Food,
 }
 
 static var item_resources: Dictionary[Item, ItemResource] = {
@@ -29,4 +30,5 @@ static var item_resources: Dictionary[Item, ItemResource] = {
 	Item.SeaLavend: preload("res://items/sea_lavend.tres") as ItemResource,
 	Item.SunnyLavend: preload("res://items/sunny_lavend.tres") as ItemResource,
 	Item.Coin: preload("res://items/coin.tres") as ItemResource,
+	Item.Food: preload("res://items/momma_food.tres") as ItemResource
 }

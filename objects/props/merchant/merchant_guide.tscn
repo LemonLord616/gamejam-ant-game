@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://m62xr6w4l48g"]
+[gd_scene load_steps=9 format=3 uid="uid://m62xr6w4l48g"]
 
 [ext_resource type="TileSet" uid="uid://b8l2pbbbeoq5o" path="res://objects/props/resources/guide_wall_tile_set.tres" id="1_b8pe2"]
 [ext_resource type="Texture2D" uid="uid://j6ubiolukcj6" path="res://objects/props/resources/coin_outline.tres" id="2_idq07"]
 [ext_resource type="Texture2D" uid="uid://cneicyolbyfq8" path="res://assets/Hold items/Coin.png" id="3_dpgfg"]
 [ext_resource type="Texture2D" uid="uid://b4auywfdrqkke" path="res://objects/props/resources/arrow_outline.tres" id="3_lvnar"]
+[ext_resource type="Texture2D" uid="uid://bf7q7sanpyesr" path="res://assets/guide_outlines.png" id="4_4hbf5"]
+[ext_resource type="Texture2D" uid="uid://cfwxhe0fhpiv5" path="res://assets/Food pack/Food_pack.png" id="6_lt021"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ah0ba"]
 height = 64.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvbgk"]
+atlas = ExtResource("4_4hbf5")
+region = Rect2(48, 16, 16, 16)
 
 [node name="MerchantGuide" type="StaticBody2D"]
 
@@ -29,8 +35,16 @@ texture = ExtResource("2_idq07")
 position = Vector2(0, 13)
 texture = ExtResource("3_lvnar")
 
+[node name="FoodOutline" type="Sprite2D" parent="Outlines"]
+position = Vector2(17, 13)
+texture = SubResource("AtlasTexture_yvbgk")
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Coin" type="Sprite2D" parent="Items"]
 position = Vector2(-17, 13)
 texture = ExtResource("3_dpgfg")
+
+[node name="Food" type="Sprite2D" parent="Items"]
+position = Vector2(18, 14)
+texture = ExtResource("6_lt021")

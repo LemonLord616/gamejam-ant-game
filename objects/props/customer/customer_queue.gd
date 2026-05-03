@@ -42,8 +42,6 @@ func _ready() -> void:
 	_randomize_customer()
 	_randomize_required_items(1)
 	#_require_coffee(1)
-	print(required_items)
-	print(items_done)
 
 func _require_coffee(amount: int) -> void:
 	items_done.resize(amount)

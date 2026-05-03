@@ -14,10 +14,14 @@ enum AvailaibleItem {
 	SunnyLavendSeed,
 	Lavend,
 	SeaLavend,
-	SunnyLavend
+	SunnyLavend,
+	SeaLavendCup,
+	SunnyLavendCup,
 }
 var item_to_res: Dictionary[AvailaibleItem, ItemManager.Item] = {
 	AvailaibleItem.LavendCup      : ItemManager.Item.LavendCup,
+	AvailaibleItem.SeaLavendCup   : ItemManager.Item.SeaLavendCup,
+	AvailaibleItem.SunnyLavendCup : ItemManager.Item.SunnyLavendCup,
 	AvailaibleItem.Seed           : ItemManager.Item.Seed,
 	AvailaibleItem.RandomSeed     : ItemManager.Item.RandomSeed,
 	AvailaibleItem.LavendSeed     : ItemManager.Item.LavendSeed,
@@ -29,6 +33,8 @@ var item_to_res: Dictionary[AvailaibleItem, ItemManager.Item] = {
 }
 var item_to_frame: Dictionary[AvailaibleItem, int] = {
 	AvailaibleItem.LavendCup      : 0,
+	AvailaibleItem.SeaLavendCup   : 0,
+	AvailaibleItem.SunnyLavendCup : 0,
 	AvailaibleItem.Seed           : 1,
 	AvailaibleItem.RandomSeed     : 2,
 	AvailaibleItem.LavendSeed     : 3,

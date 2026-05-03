@@ -1,14 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://7fuogd648rys"]
+[gd_scene load_steps=13 format=3 uid="uid://7fuogd648rys"]
 
 [ext_resource type="Texture2D" uid="uid://djq73khwbp8tc" path="res://assets/old_sprites/shadow.png" id="1_qh23o"]
 [ext_resource type="SpriteFrames" uid="uid://dg6m5sruxc2nv" path="res://objects/props/merchant/resources/merchant_frames.tres" id="1_qrdlo"]
 [ext_resource type="Script" uid="uid://cr5p7hi373n1b" path="res://objects/props/merchant/merchant.gd" id="1_rj8k1"]
 [ext_resource type="SpriteFrames" uid="uid://da6dlrodux7e3" path="res://objects/props/merchant/resources/merchant_torch_frames.tres" id="2_453d6"]
+[ext_resource type="PackedScene" uid="uid://bv66bf6hqlpiv" path="res://objects/laying_item/laying_item.tscn" id="2_q5ycv"]
 [ext_resource type="Texture2D" uid="uid://n42rxromibxm" path="res://assets/old_sprites/shadow_small.png" id="2_rj8k1"]
 [ext_resource type="Shape2D" uid="uid://2btnw7ooxdsk" path="res://objects/props/merchant/resources/merchant_collision_shape.tres" id="6_ajye6"]
+[ext_resource type="Script" uid="uid://cklw405828cv8" path="res://objects/props/interactable_area.gd" id="7_r4ygq"]
+[ext_resource type="Script" uid="uid://4v75ngdx38a0" path="res://objects/props/item_visuals.gd" id="8_tu3ov"]
+[ext_resource type="Texture2D" uid="uid://8bnm85igeru6" path="res://assets/done_sign.png" id="9_q5ycv"]
+
+[sub_resource type="Curve" id="Curve_3qhpi"]
+_limits = [1.0, 5.0, 0.0, 1200.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1200, 5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hms7b"]
+radius = 20.0
+height = 80.0
 
 [node name="Merchant" type="StaticBody2D"]
 script = ExtResource("1_rj8k1")
+laying_item_scene = ExtResource("2_q5ycv")
+cost_time = SubResource("Curve_3qhpi")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 texture = ExtResource("1_qh23o")
@@ -30,3 +45,20 @@ sprite_frames = ExtResource("2_453d6")
 position = Vector2(6, 12)
 rotation = 1.5707964
 shape = ExtResource("6_ajye6")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("7_r4ygq")
+metadata/_custom_type_script = "uid://cklw405828cv8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hms7b")
+
+[node name="ItemVisuals" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -30)
+script = ExtResource("8_tu3ov")
+done_mark = ExtResource("9_q5ycv")
