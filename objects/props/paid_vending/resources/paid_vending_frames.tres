@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b1wunqba2wcv8"]
+
+[ext_resource type="Texture2D" uid="uid://cuyuuwf8bhdbu" path="res://assets/Vending/Lavanda seed vending.png" id="1_egb4b"]
+[ext_resource type="Texture2D" uid="uid://o0raiv4tfalr" path="res://assets/Vending/Sea Lavanda seed vending.png" id="2_1wgwy"]
+[ext_resource type="Texture2D" uid="uid://dx3bc6rgktjvo" path="res://assets/Vending/Sunny Lavanda seed vending.png" id="3_i3pyq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_egb4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1wgwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i3pyq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

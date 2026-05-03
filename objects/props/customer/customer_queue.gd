@@ -12,6 +12,9 @@ class_name CustomerQueue
 @onready var queue_sprite: AnimatedSprite2D = %Queue
 @onready var item_visuals: ItemVisuals = %ItemVisuals
 
+@export var coins_per_coffee := 2
+var coffee_amount := 1
+
 enum Customer {
 	PUNK, RICH, KACHOK, CHEF, SKATER
 }
@@ -41,15 +44,7 @@ func _ready() -> void:
 	customer_sprite.play("default")
 	_randomize_customer()
 	_randomize_required_items(1)
-	#_require_coffee(1)
-
-func _require_coffee(amount: int) -> void:
-	items_done.resize(amount)
-	items_done.fill(false)
-	required_items = []
-	for i in range(amount):
-		required_items.append(ItemManager.Item.LavendCup)
-	item_visuals.create_item_sprites(required_items)
+	coffee_amount = 1
 
 func _on_interact(player: Player) -> void:
 	if !player.has_item():
@@ -82,12 +77,11 @@ func _check_task_done() -> void:
 	_task_done()
 
 func _task_done() -> void:
-	_dispense_item(ItemManager.Item.Coin)
+	for i in range(coffee_amount * coins_per_coffee):
+		_dispense_item(ItemManager.Item.Coin)
 	_randomize_customer()
-	_randomize_required_items(
-		max(1, int( coffee_time_curve.sample(global_clock.timer) ))
-	)
-	#_require_coffee(1)
+	coffee_amount = max(1, int( coffee_time_curve.sample(global_clock.timer) ))
+	_randomize_required_items(coffee_amount)
 
 func _randomize_required_items(amount: int) -> void:
 	items_done.resize(amount)

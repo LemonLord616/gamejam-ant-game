@@ -10,6 +10,7 @@ signal item_discarded
 @export var device_id: int = 0
 
 @export var motion_profile: MotionProfileResource
+@export var energy_motion_profile: MotionProfileResource
 @export var controller: PlayerController
 @export var floating_item: FloatingItem
 @export var laying_item_scene: PackedScene
@@ -20,6 +21,7 @@ signal item_discarded
 @export var max_health := 10
 
 @onready var health_component: PlayerHealth = %Health
+@onready var stamina_component: PlayerStamina = %Stamina
 
 var current_item_idx: ItemManager.Item
 var current_item: ItemResource
@@ -52,6 +54,11 @@ func get_item() -> ItemManager.Item:
 	return current_item_idx
 
 func set_item(item_idx: ItemManager.Item) -> void:
+	if item_idx == ItemManager.Item.Energy:
+		motion_profile = energy_motion_profile
+		recover_health(100)
+		stamina_component.bar.max_value = 10.0
+		return
 	current_item_idx = item_idx
 	current_item = ItemManager.item_resources[item_idx]
 	item_changed.emit(current_item)

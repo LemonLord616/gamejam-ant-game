@@ -2,29 +2,32 @@
 
 [ext_resource type="Texture2D" uid="uid://bwbvi7ny1u2qo" path="res://assets/merchant.png" id="1_km26g"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjujw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_km26g"]
 atlas = ExtResource("1_km26g")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fa0fx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjujw"]
 atlas = ExtResource("1_km26g")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pihep"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa0fx"]
 atlas = ExtResource("1_km26g")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxp3f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pihep"]
 atlas = ExtResource("1_km26g")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7kee"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxp3f"]
 atlas = ExtResource("1_km26g")
 region = Rect2(128, 0, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km26g")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bjujw")
 }, {
@@ -36,9 +39,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nxp3f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7kee")
 }],
 "loop": true,
 "name": &"default",

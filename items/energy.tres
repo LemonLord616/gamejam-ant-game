@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dh66wda38qw13"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_5i0kb"]
+[ext_resource type="Texture2D" uid="uid://86ompjn6jvqf" path="res://assets/burn.png" id="2_lfrkc"]
+
+[resource]
+script = ExtResource("1_5i0kb")
+name = &"Burn"
+texture = ExtResource("2_lfrkc")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://efv637r0tyuw"]
+[gd_scene load_steps=19 format=3 uid="uid://efv637r0tyuw"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://ba2oy1f36dw4q" path="res://objects/player/resources/player_default_physic_material.tres" id="1_sglur"]
 [ext_resource type="Script" uid="uid://snyoa81c1xdr" path="res://objects/player/player.gd" id="1_symyc"]
 [ext_resource type="Shape2D" uid="uid://crerrh6d76raa" path="res://objects/player/resources/player_default_collision_shape.tres" id="2_abrql"]
 [ext_resource type="Script" uid="uid://b0ntspknng4af" path="res://objects/player/controllers/player_kb_controller.gd" id="4_bls4j"]
 [ext_resource type="Script" path="res://objects/enemies/position_tracker.gd" id="4_c34wb"]
+[ext_resource type="Resource" uid="uid://cghmdfmhn0efl" path="res://objects/player/resources/player_energy_motion_profile.tres" id="4_dthqj"]
 [ext_resource type="PackedScene" uid="uid://bv66bf6hqlpiv" path="res://objects/laying_item/laying_item.tscn" id="4_x5bgp"]
 [ext_resource type="Resource" uid="uid://bbfhnqg1whbc8" path="res://objects/player/resources/player_default_motion_profile.tres" id="5_fkugw"]
 [ext_resource type="Script" uid="uid://k0mbbk4ymog3" path="res://objects/player/player_animated_sprite.gd" id="8_26q78"]
@@ -27,6 +28,7 @@ mass = 20.0
 physics_material_override = ExtResource("1_sglur")
 script = ExtResource("1_symyc")
 motion_profile = ExtResource("5_fkugw")
+energy_motion_profile = ExtResource("4_dthqj")
 controller = NodePath("PlayerKbController")
 laying_item_scene = ExtResource("4_x5bgp")
 
@@ -87,6 +89,7 @@ player = NodePath("..")
 player_controller = NodePath("../PlayerKbController")
 
 [node name="Stamina" type="Node" parent="." node_paths=PackedStringArray("player_controller", "player")]
+unique_name_in_owner = true
 script = ExtResource("13_c34wb")
 player_controller = NodePath("../PlayerKbController")
 player = NodePath("..")
