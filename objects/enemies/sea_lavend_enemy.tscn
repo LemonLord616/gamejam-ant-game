@@ -48,7 +48,6 @@ collision_layer = 0
 collision_mask = 32
 script = ExtResource("5_l3qm6")
 knockback_impulse = 15000.0
-damage = 2
 metadata/_custom_type_script = "uid://hvtdpo1f51w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]

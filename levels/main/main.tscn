@@ -60,31 +60,37 @@ y_sort_enabled = true
 
 [node name="Sign" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
 position = Vector2(-16, -48)
-text = "Let me tell you a story... There once was a little ant"
+text = "Let me tell you a story... Once upon a time, there was a little [color=blue]ant[/color]. His mother was going through a difficult period of [color=blue]metamorphosis[/color]; she would soon turn into a beautiful butterfly! All his brothers and sisters had moved away from their mother. Now it is up to him to help his mother get through this!"
 
 [node name="Sign2" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
-position = Vector2(-240, 16)
-text = "This is a garden"
+position = Vector2(-240, 80)
+text = "This is a garden."
 
 [node name="Sign3" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
 position = Vector2(80, -144)
-text = "His mom was very abusive.
-By the way, this is trash can"
+text = "This is trash can. This is a relic from the times when people couldn't just throw things away."
 
 [node name="Sign4" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
 position = Vector2(-144, -80)
-text = "She was very fat and she loved Lavend Raph
-
-These are cheater dispensers. You can try take the seed and plant it in garden"
+text = "You can try taking the [color=blue]seeds[/color] and planting them in your garden.
+[color=red][i]Warning![/i][/color] Keep in mind that these are magical seeds that can grow into a [color=blue]Lavender Beast![/color]"
 
 [node name="Sign5" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
 position = Vector2(144, 48)
-text = "This is momma. Feed her"
+text = "This is momma. [color=blue]Feed[/color] her."
 
 [node name="Sign6" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
 position = Vector2(-80, -208)
-text = "This is coffee machine. You can see recipes on the wall nearby.
-[color=blue][i]Be careful![/i][/color] you can discard your recipe by interacting with empty hands"
+text = "This is a coffee machine. The [color=blue]recipes[/color] can be seen on the [color=blue]wall[/color] nearby.
+[color=red][i]Caution![/i][/color] You can throw away your recipe by using it empty-handed."
+
+[node name="Sign7" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(-112, -432)
+text = "Little Ant's family owns the Lavender Raf Coffee business, but now he's the only one running it! You can earn [color=blue]coins[/color] by selling coffee!"
+
+[node name="Sign8" parent="YSort/Signs" instance=ExtResource("3_l8qe7")]
+position = Vector2(272, -336)
+text = "He's a merchant. No one knows him or where he's from. He offered to sell you [color=blue]food[/color] for your mother!"
 
 [node name="Harvests" type="Node2D" parent="YSort"]
 y_sort_enabled = true
