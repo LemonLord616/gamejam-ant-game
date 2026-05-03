@@ -19,8 +19,8 @@
 [ext_resource type="Script" uid="uid://biu7hjwp2uo10" path="res://levels/music.gd" id="15_4fc0e"]
 [ext_resource type="PackedScene" uid="uid://ddudbs805nxcs" path="res://objects/props/coffee_machine/coffee_guide.tscn" id="15_iwo8l"]
 [ext_resource type="PackedScene" uid="uid://7fuogd648rys" path="res://objects/props/merchant/merchant.tscn" id="15_s07ge"]
-[ext_resource type="PackedScene" uid="uid://m62xr6w4l48g" path="res://objects/props/merchant/merchant_guide.tscn" id="17_j7211"]
-[ext_resource type="PackedScene" uid="uid://bc64oinx3i11w" path="res://objects/props/customer/customer_guide.tscn" id="18_fd7wu"]
+[ext_resource type="PackedScene" path="res://objects/props/merchant/merchant_guide.tscn" id="17_j7211"]
+[ext_resource type="PackedScene" path="res://objects/props/customer/customer_guide.tscn" id="18_fd7wu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fput"]
 size = Vector2(1344, 256)
