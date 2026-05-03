@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm4xn3qaqbs1h"]
+
+[ext_resource type="Script" uid="uid://c80sgcnvpplbt" path="res://levels/victory.gd" id="1_b6b72"]
+[ext_resource type="PackedScene" uid="uid://b518b0w1lcjsm" path="res://levels/main/main.tscn" id="2_bucei"]
+[ext_resource type="FontFile" uid="uid://vvbf66v3wf2t" path="res://assets/peaberry-font/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" id="2_esoag"]
+[ext_resource type="PackedScene" uid="uid://dvu5g2n5yesi" path="res://levels/menu.tscn" id="3_0qxk4"]
+[ext_resource type="Texture2D" uid="uid://cjbetykfw81il" path="res://assets/Win-scene.png" id="4_0qxk4"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6b72")
+main_scene = ExtResource("2_bucei")
+menu_scene = ExtResource("3_0qxk4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_0qxk4")
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 216.0
+offset_right = 340.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_esoag")
+text = "Retry"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 248.0
+offset_right = 353.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("2_esoag")
+text = "To Menu"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -36.0
+offset_right = 156.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.625
+offset_top = -34.0
+offset_right = 160.625
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_esoag")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[color=green]You Fed your mother, Congrats![/color]"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

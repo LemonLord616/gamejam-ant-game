@@ -5,9 +5,9 @@ class_name BigMomma
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var progress_bar: ProgressBar = %ProgressBar
 
-@export var stage1_capacity: int = 1
-@export var stage2_capacity: int = 5
-@export var stage3_capacity: int = 20 
+@export var stage1_capacity: int = 2
+@export var stage2_capacity: int = 3
+@export var stage3_capacity: int = 5 
 
 enum Stage {
 	ONE, TWO, THREE
@@ -38,6 +38,8 @@ func _on_counter_change(new_counter: int) -> void:
 		match current_stage:
 			Stage.ONE: current_stage = Stage.TWO
 			Stage.TWO: current_stage = Stage.THREE
+			Stage.THREE:
+				get_tree().change_scene_to_file("res://levels/victory.tscn")
 
 func _ready() -> void:
 	current_stage = Stage.ONE
@@ -45,6 +47,6 @@ func _ready() -> void:
 	interactable_area.interacted.connect(_on_interact)
 
 func _on_interact(player: Player) -> void:
-	if player.is_item(ItemManager.Item.LavendCup):
+	if player.is_item(ItemManager.Item.Food):
 		player.remove_item()
 		counter = counter + 1

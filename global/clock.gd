@@ -8,10 +8,18 @@ static var timer := 0
 static var mob_die_queue: Dictionary[int, Array] = {}
 
 func _ready() -> void:
+	wait_time = 1.0
+
+func timer_start() -> void:
 	timeout.connect(_on_timeout)
 	timeout.connect(_check_monsters)
-	wait_time = 1.0
 	start()
+	timer = 0
+
+func timer_stop() -> void:
+	timeout.disconnect(_on_timeout)
+	timeout.disconnect(_check_monsters)
+	stop()
 
 func add_mob_die_queue(time_to_live: int, mob: Mob) -> void:
 	if time_to_live <= 1:

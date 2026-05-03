@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://doqv7gkvt46et"]
+
+[ext_resource type="Script" uid="uid://bkfskg0ogevwp" path="res://items/item_resource.gd" id="1_8acps"]
+[ext_resource type="Texture2D" uid="uid://cfwxhe0fhpiv5" path="res://assets/Food pack/Food_pack.png" id="2_sdmr4"]
+
+[resource]
+script = ExtResource("1_8acps")
+name = &"Food"
+texture = ExtResource("2_sdmr4")
+metadata/_custom_type_script = "uid://bkfskg0ogevwp"
