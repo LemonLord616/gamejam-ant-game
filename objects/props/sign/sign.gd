@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 class_name Sign
 
 @export_multiline var text: String
