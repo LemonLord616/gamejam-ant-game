@@ -6,16 +6,12 @@ signal item_changed(item_res: ItemResource)
 signal item_picked
 signal item_discarded
 
-@onready var player_gp_controller: PlayerGpController = %PlayerGpController
-@onready var player_kb_controller: PlayerKbController = %PlayerKbController
-@onready var interact_area: InteractArea = %InteractArea
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var player_id: int = 1
 @export var device_id: int = 0
 
 @export var motion_profile: MotionProfileResource
 @export var energy_motion_profile: MotionProfileResource
-var controller: PlayerController = null
+@export var controller: PlayerController
 @export var floating_item: FloatingItem
 @export var laying_item_scene: PackedScene
 @export_range(0.0, 1000.0, 0.1) var drop_impulse := 100.0
@@ -33,7 +29,6 @@ var current_item: ItemResource
 func _ready() -> void:
 	lock_rotation = true
 	gravity_scale = 0.0
-	controller = player_kb_controller
 	controller.exit.connect(_on_exit)
 	controller.drop.connect(_on_drop)
 	health_component.dead.connect(_on_dead)

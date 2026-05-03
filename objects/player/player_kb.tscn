@@ -1,0 +1,93 @@
+[gd_scene load_steps=18 format=3 uid="uid://efv637r0tyuw"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://ba2oy1f36dw4q" path="res://objects/player/resources/player_default_physic_material.tres" id="1_f28hg"]
+[ext_resource type="Script" uid="uid://snyoa81c1xdr" path="res://objects/player/player.gd" id="2_5ro2i"]
+[ext_resource type="Resource" uid="uid://bbfhnqg1whbc8" path="res://objects/player/resources/player_default_motion_profile.tres" id="3_txtv0"]
+[ext_resource type="Resource" uid="uid://cghmdfmhn0efl" path="res://objects/player/resources/player_energy_motion_profile.tres" id="4_gepch"]
+[ext_resource type="PackedScene" uid="uid://bv66bf6hqlpiv" path="res://objects/laying_item/laying_item.tscn" id="5_fhhh4"]
+[ext_resource type="Script" path="res://objects/enemies/position_tracker.gd" id="6_p547y"]
+[ext_resource type="Script" uid="uid://c52la7qvjqvx" path="res://objects/player/selection_visuals.gd" id="7_re4kx"]
+[ext_resource type="Texture2D" uid="uid://bapd0y207ryds" path="res://assets/old_sprites/select_corner.png" id="8_4nvth"]
+[ext_resource type="Script" uid="uid://bmk1howhfs7r3" path="res://objects/player/interact_area.gd" id="9_yb1fx"]
+[ext_resource type="Script" uid="uid://b0ntspknng4af" path="res://objects/player/controllers/player_kb_controller.gd" id="11_ruh8x"]
+[ext_resource type="Shape2D" uid="uid://crerrh6d76raa" path="res://objects/player/resources/player_default_collision_shape.tres" id="12_sch0d"]
+[ext_resource type="Texture2D" uid="uid://n42rxromibxm" path="res://assets/old_sprites/shadow_small.png" id="13_dimgr"]
+[ext_resource type="SpriteFrames" uid="uid://ddfl6141m1nfn" path="res://objects/player/resources/frames_ant_guy.tres" id="14_80mc5"]
+[ext_resource type="Script" uid="uid://k0mbbk4ymog3" path="res://objects/player/player_animated_sprite.gd" id="15_8sr3c"]
+[ext_resource type="Script" uid="uid://cbfv47pk18e03" path="res://objects/player/player_stamina.gd" id="16_fi0xp"]
+[ext_resource type="Script" uid="uid://d2thrdgr58hdm" path="res://objects/player/player_health.gd" id="17_t40wj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgwla"]
+size = Vector2(40, 40)
+
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("controller")]
+collision_layer = 35
+collision_mask = 3
+mass = 20.0
+physics_material_override = ExtResource("1_f28hg")
+script = ExtResource("2_5ro2i")
+motion_profile = ExtResource("3_txtv0")
+energy_motion_profile = ExtResource("4_gepch")
+controller = NodePath("PlayerKbController")
+laying_item_scene = ExtResource("5_fhhh4")
+
+[node name="PositionTracker" type="Node2D" parent="."]
+position = Vector2(0, 14)
+script = ExtResource("6_p547y")
+
+[node name="SelectionSystem" type="Node2D" parent="."]
+
+[node name="SelectionVisuals" type="Node2D" parent="SelectionSystem" node_paths=PackedStringArray("interact_area")]
+script = ExtResource("7_re4kx")
+interact_area = NodePath("../InteractArea")
+sel_corner = ExtResource("8_4nvth")
+metadata/_custom_type_script = "uid://c52la7qvjqvx"
+
+[node name="InteractArea" type="Area2D" parent="SelectionSystem" node_paths=PackedStringArray("player", "player_controller")]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("9_yb1fx")
+player = NodePath("../..")
+player_controller = NodePath("../../PlayerKbController")
+metadata/_custom_type_script = "uid://bmk1howhfs7r3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionSystem/InteractArea"]
+shape = SubResource("RectangleShape2D_xgwla")
+
+[node name="PlayerKbController" type="Node" parent="." node_paths=PackedStringArray("player", "debug_raycast", "stamina")]
+unique_name_in_owner = true
+script = ExtResource("11_ruh8x")
+player = NodePath("..")
+debug_raycast = NodePath("../Debug")
+stamina = NodePath("../Stamina")
+metadata/_custom_type_script = "uid://b0ntspknng4af"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = ExtResource("12_sch0d")
+
+[node name="Debug" type="RayCast2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("13_dimgr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player", "player_controller")]
+sprite_frames = ExtResource("14_80mc5")
+animation = &"Run"
+offset = Vector2(0, -8)
+script = ExtResource("15_8sr3c")
+player = NodePath("..")
+player_controller = NodePath("../PlayerKbController")
+
+[node name="Stamina" type="Node" parent="." node_paths=PackedStringArray("player_controller", "player")]
+unique_name_in_owner = true
+script = ExtResource("16_fi0xp")
+player_controller = NodePath("../PlayerKbController")
+player = NodePath("..")
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("17_t40wj")
+player = NodePath("..")
