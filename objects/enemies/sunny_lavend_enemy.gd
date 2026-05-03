@@ -60,6 +60,7 @@ func _handle_shoot_timer(delta: float) -> void:
 	var instance := projectile.instantiate() as Projectile
 	instance.global_position = global_position
 	instance.set_move_direction(direction)
+	instance.rotation = direction.angle()
 	get_tree().current_scene.add_child(instance)
 	
 func _random_unit_vector() -> Vector2:
