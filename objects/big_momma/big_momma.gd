@@ -38,7 +38,8 @@ func _on_counter_change(new_counter: int) -> void:
 		match current_stage:
 			Stage.ONE: current_stage = Stage.TWO
 			Stage.TWO: current_stage = Stage.THREE
-			Stage.THREE: pass # TODO: add win
+			Stage.THREE:
+				get_tree().change_scene_to_file("res://levels/victory.tscn")
 
 func _ready() -> void:
 	current_stage = Stage.ONE

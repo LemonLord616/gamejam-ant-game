@@ -29,6 +29,13 @@ func _ready() -> void:
 	gravity_scale = 0.0
 	controller.exit.connect(_on_exit)
 	controller.drop.connect(_on_drop)
+	health_component.dead.connect(_on_dead)
+
+func _on_dead() -> void:
+	_change_to_lose_scene.call_deferred()
+
+func _change_to_lose_scene() -> void:
+	get_tree().change_scene_to_file("res://levels/lose.tscn")
 
 func _on_exit() -> void:
 	ui.hide_text()
