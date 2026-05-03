@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://da6dlrodux7e3"]
+
+[ext_resource type="Texture2D" uid="uid://c6560xcqqb11r" path="res://assets/merchant_torch.png" id="1_6ur5k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucp8v"]
+atlas = ExtResource("1_6ur5k")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yahcx"]
+atlas = ExtResource("1_6ur5k")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxq5p"]
+atlas = ExtResource("1_6ur5k")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atkbl"]
+atlas = ExtResource("1_6ur5k")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e61rf"]
+atlas = ExtResource("1_6ur5k")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff7mr"]
+atlas = ExtResource("1_6ur5k")
+region = Rect2(160, 0, 32, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucp8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yahcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxq5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atkbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e61rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff7mr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

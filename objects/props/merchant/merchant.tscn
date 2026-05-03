@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://7fuogd648rys"]
+
+[ext_resource type="Texture2D" uid="uid://djq73khwbp8tc" path="res://assets/old_sprites/shadow.png" id="1_qh23o"]
+[ext_resource type="SpriteFrames" uid="uid://dg6m5sruxc2nv" path="res://objects/props/merchant/resources/merchant_frames.tres" id="1_qrdlo"]
+[ext_resource type="Script" uid="uid://cr5p7hi373n1b" path="res://objects/props/merchant/merchant.gd" id="1_rj8k1"]
+[ext_resource type="SpriteFrames" uid="uid://da6dlrodux7e3" path="res://objects/props/merchant/resources/merchant_torch_frames.tres" id="2_453d6"]
+[ext_resource type="Texture2D" uid="uid://n42rxromibxm" path="res://assets/old_sprites/shadow_small.png" id="2_rj8k1"]
+[ext_resource type="Shape2D" uid="uid://2btnw7ooxdsk" path="res://objects/props/merchant/resources/merchant_collision_shape.tres" id="6_ajye6"]
+
+[node name="Merchant" type="StaticBody2D"]
+script = ExtResource("1_rj8k1")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_qh23o")
+
+[node name="ShadowSmall" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+texture = ExtResource("2_rj8k1")
+
+[node name="MerchantSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_qrdlo")
+
+[node name="TorchSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(16, -16)
+sprite_frames = ExtResource("2_453d6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 12)
+rotation = 1.5707964
+shape = ExtResource("6_ajye6")
